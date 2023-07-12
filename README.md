@@ -1,6 +1,18 @@
 # hotel-room-booking-csi23
 This project is about the design and development of Hotel Room Booking website.
 
+## Color combo for the application UI
+* Color combination taken from MuffinGroup<sup>[Link](https://muffingroup.com/blog/yellow-color-palette/)</sup>
+```scss
+$smalt-blue: #567d92;
+$casper: #a9c5d3;
+$pirate-gold: #b08902;
+$teak: #b0a16b;
+$candlelight: #fdd719;
+$tuatara: #2b2a28;
+$vis-vis: #ffec9f;
+```
+
 ## Storage
 * MongoDB
 ### File storage middleware

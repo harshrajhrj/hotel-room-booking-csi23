@@ -46,8 +46,6 @@ app.set('views', path.join(__dirname, 'views'));
 // middleware to server static files with express
 app.use(express.static(path.join(__dirname, 'client')));
 
-app.get('/', async (req, res) => {
-    res.send('Hello !');
-})
+app.use('/', require('./server/portal/portal'));
 
 app.listen(3000, () => { console.log('HotelRoomSystem Server is live') });
