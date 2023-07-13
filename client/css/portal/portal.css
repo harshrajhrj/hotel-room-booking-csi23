@@ -9,5 +9,12 @@
 
 body {
   background: #ffec9f;
-  color: #567d92;
+  width: 100%;
+  height: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=portal.css.map */

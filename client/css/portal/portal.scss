@@ -11,5 +11,12 @@
 
 body {
     background: v.$vis-vis;
-    color: v.$smalt-blue;
+    width: 100%;
+    height: 100%;
+    padding-left: calc(100% - 93%);
+    padding-right: calc(100% - 93%);
+}
+
+.hidden {
+    display: none;
 }

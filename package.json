@@ -2,9 +2,9 @@
   "name": "hotel-room-booking-csi23",
   "version": "1.0.0",
   "description": "This project is about the design and development of Hotel Room Booking website.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start:watch": "nodemon --watch app.js"
   },
   "keywords": [],
   "author": "",
