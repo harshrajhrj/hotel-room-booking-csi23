@@ -4,7 +4,7 @@
   "description": "This project is about the design and development of Hotel Room Booking website.",
   "main": "app.js",
   "scripts": {
-    "start:watch": "nodemon --watch app.js"
+    "start": "nodemon --watch app.js"
   },
   "keywords": [],
   "author": "",
