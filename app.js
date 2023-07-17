@@ -3,8 +3,9 @@ ConnectDB();
 const express = require('express');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
-const path = require('path');
 const mongoSession = require('connect-mongo');
+const path = require('path');
+const passport = require('passport');
 const app = express();
 
 // middleware to keep the incoming objects in JSON format
@@ -38,6 +39,10 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     next();
 })
+
+// using passport session to store the user in session object
+app.use(passport.initialize())
+app.use(passport.session())
 
 // view engine set to ejs
 app.set('view engine', 'ejs');
