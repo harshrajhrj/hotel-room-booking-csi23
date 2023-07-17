@@ -1,11 +1,13 @@
 const ConnectDB = require('./ConnectDB');
 ConnectDB();
+require('dotenv').config();
 const express = require('express');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
 const mongoSession = require('connect-mongo');
 const path = require('path');
 const passport = require('passport');
+require('./server/portal/OAuth_Authentication/GoogleOAuth');
 const app = express();
 
 // middleware to keep the incoming objects in JSON format
@@ -30,6 +32,9 @@ app.use(expressSession({
     })
 }))
 
+// authenticate the session
+app.use(passport.authenticate('session'));
+
 // flash middleware to store text messages in session
 app.use(flash());
 
@@ -40,7 +45,7 @@ app.use((req, res, next) => {
     next();
 })
 
-// using passport session to store the user in session object
+// using passport session to store the guest in session object
 app.use(passport.initialize())
 app.use(passport.session())
 

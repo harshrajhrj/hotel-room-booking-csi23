@@ -14,7 +14,14 @@
             <div class="h-nav-book-now"><a>Book Now!</a></div>
         </div>
         <div class="h-nav-user">
-            <button type="button" class="btn">Sign in</button>
+            <!-- <button type="button" class="btn">Sign in</button> -->
+            <% if(guest) { %>
+                <form action="/auth/logout" method="post">
+                    <button type="submit" class="btn">Sign out</button>
+                </form>
+            <% } else { %>
+                <a href="/auth/login" class="btn">Sign in</a>
+            <% } %>
         </div>
     </nav>
 </div>

@@ -107,9 +107,16 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
         .h-nav-user {
             flex-grow: 0.01;
 
+            a {
+                font-size: 1.3rem;
+                color: v.$smalt-blue;
+                text-decoration: none;
+            }
+
             button {
                 font-size: 1.3rem;
                 color: v.$smalt-blue;
+                text-decoration: none;
             }
         }
     }

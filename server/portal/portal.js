@@ -1,7 +1,8 @@
 const app = require('express').Router();
 
 app.get('/', async (req, res) => {
-    res.render('portal.ejs');
+    const guest = req.user;
+    res.render('portal.ejs', { guest });
 });
 
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));
