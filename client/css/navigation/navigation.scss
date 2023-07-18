@@ -85,21 +85,23 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
             flex-grow: 0.5;
             justify-content: space-evenly;
             letter-spacing: v.$ltr-spacing;
-            color: v.$tuatara;
             gap: 10px;
 
             div {
-                padding: 1.5px;
-
+                padding: 0 0.375rem 0 0.375rem;
                 a {
+                    color: v.$tuatara;
                     font-weight: 500;
+                    text-decoration: none;
+
                     &:hover {
-                        border-bottom: 2px solid v.$smalt-blue;
+                        color: v.$smalt-blue;
                     }
                 }
 
                 &:hover {
                     background: v.$vis-vis;
+                    border-radius: 0.375rem;
                 }
             }
         }
@@ -107,16 +109,10 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
         .h-nav-user {
             flex-grow: 0.01;
 
-            a {
-                font-size: 1.3rem;
-                color: v.$smalt-blue;
-                text-decoration: none;
-            }
-
+            a,
             button {
                 font-size: 1.3rem;
                 color: v.$smalt-blue;
-                text-decoration: none;
             }
         }
     }
