@@ -1,6 +1,7 @@
 # hotel-room-booking-csi23
 This project is about the design and development of Hotel Room Booking website.
-
+## HTTP Status Codes
+* Frequent HTTP Status Codes used<sup>[Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)</sup>
 ## Color combo for the application UI
 * Color combination taken from MuffinGroup<sup>[Link](https://muffingroup.com/blog/yellow-color-palette/)</sup>
 ```scss
