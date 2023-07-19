@@ -20,7 +20,7 @@ app.put('/', async (req, res) => {
         /**
          * Schema keys that has to be exactly same as payload's object keys
          */
-        const required = ['country', 'code', 'capital', 'timezone'];
+        const required = ['country', 'dialCode', 'iso3', 'capital', 'timezone'];
         payload = payload.filter(function (p) {
             var flag = true;
             for (const ele of required)
@@ -76,9 +76,9 @@ app.put('/', async (req, res) => {
 /**
  * Delete a resource from database
  */
-app.delete('/:code', async (req, res) => {
+app.delete('/:iso3', async (req, res) => {
     try {
-        const deletedCountry = await Country.deleteOne({ code: req.params.code });
+        const deletedCountry = await Country.deleteOne({ iso3: req.params.iso3 });
         res.status(200).json({
             message: 'Deleted',
             detail: deletedCountry

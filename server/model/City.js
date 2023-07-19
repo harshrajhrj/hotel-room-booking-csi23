@@ -7,10 +7,15 @@ const CitySchema = new mongoose.Schema({
         uppercase: true,
         unique: true
     },
-    country: {
-        type: mongoose.SchemaTypes.ObjectId,
+    iso: {
+        type: String,
         required: true,
-        ref: 'Country'
+        uppercase: true
+    },
+    stateISO: {
+        type: String,
+        required: true,
+        uppercase: true
     },
     state: {
         type: mongoose.SchemaTypes.ObjectId,

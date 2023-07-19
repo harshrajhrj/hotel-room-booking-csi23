@@ -7,10 +7,17 @@ const CountrySchema = new mongoose.Schema({
         uppercase: true,
         unique: true
     },
-    code: {
+    dialCode: {
         type: String,
         required: true,
         unique: true
+    },
+    iso3: {
+        type: String,
+        maxlength: 3,
+        minlength: 3,
+        unique: true,
+        required: true
     },
     capital: {
         type: String,

@@ -4,10 +4,20 @@ const StateSchema = new mongoose.Schema({
     state: {
         type: String,
         required: true,
-        uppercase : true,
+        uppercase: true,
         unique: true,
     },
-    countryCode: {
+    iso: {
+        type: String,
+        required: true,
+        uppercase: true
+    },
+    countryISO: {
+        type: String,
+        required: true,
+        uppercase: true
+    },
+    country: {
         type: mongoose.SchemaTypes.ObjectId,
         required: true,
         ref: 'Country'
@@ -15,7 +25,7 @@ const StateSchema = new mongoose.Schema({
     capital: {
         type: String,
         required: true,
-        uppercase : true,
+        uppercase: true,
         unique: true
     }
 }, { collection: 'state', timestamps: true });
