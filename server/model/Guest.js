@@ -50,6 +50,33 @@ const GuestSchema = new mongoose.Schema({
     dateOfBirth: {
         type: Date,
         default: ''
+    },
+    govVerification: {
+        aadhar: {
+            type: String,
+            maxlength: [12, 'Max length exceeded'],
+            default: ''
+        },
+        pan: {
+            type: String,
+            maxlength: [10, 'Max length exceeded'],
+            default: '',
+        },
+        drivingLicense: {
+            type: String,
+            maxlength: [16, 'Max length exceeded'],
+            default: ''
+        },
+        other: [{
+            verificationType: {
+                type: String,
+                default: ''
+            },
+            verificationId: {
+                type: String,
+                default: ''
+            }
+        }]
     }
 }, { collection: 'guest', timestamps: true });
 

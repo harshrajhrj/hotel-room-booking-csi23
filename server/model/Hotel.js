@@ -49,4 +49,4 @@ const HotelSchema = new mongoose.Schema({
         ref: 'Room',
         default: null
     }]
-})
+}, { collection: 'hotel', timestamps: true });
