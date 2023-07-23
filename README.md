@@ -22,8 +22,6 @@ $vis-vis: #ffec9f;
 * MongoDB
 ### MongoDB Storage
 * GridFS<sup>[Link](https://www.mongodb.com/docs/drivers/node/current/fundamentals/gridfs/#overview)</sup>
-* https://excellencetechnologies.in/blog/gridfs-using-mongoose-nodejs/
-* mongoose-gridfs
 * https://github.com/aheckmann/gridfs-stream
 ### File storage middleware
 * Multer<sup>[Link](https://expressjs.com/en/resources/middleware/multer.html)</sup>
