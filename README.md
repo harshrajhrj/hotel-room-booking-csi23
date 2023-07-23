@@ -13,9 +13,18 @@ $candlelight: #fdd719;
 $tuatara: #2b2a28;
 $vis-vis: #ffec9f;
 ```
-
+## Payment gateway
+* https://developers.google.com/pay/api/android/guides/tutorial
+* https://youtube.com/playlist?list=PLOU2XLYxmsILkNW9d1Jw9rHLAEORuuS-9
+* https://pay.google.com/business/console/?utm_source=yt-metadata&utm_medium=video&utm_campaign=integration
+* https://developers.google.com/pay/api/web/overview
 ## Storage
 * MongoDB
+### MongoDB Storage
+* GridFS<sup>[Link](https://www.mongodb.com/docs/drivers/node/current/fundamentals/gridfs/#overview)</sup>
+* https://excellencetechnologies.in/blog/gridfs-using-mongoose-nodejs/
+* mongoose-gridfs
+* https://github.com/aheckmann/gridfs-stream
 ### File storage middleware
 * Multer<sup>[Link](https://expressjs.com/en/resources/middleware/multer.html)</sup>
 ```javascript
@@ -35,9 +44,10 @@ npm install connect-flash
 ```javascript
 npm install express-session
 ```
-
 ### Mongo storage for express session
 * Create a mongo storage to store express session<sup>[Link](https://github.com/jdesboeufs/connect-mongo)</sup>
 ```javascript
 npm install connect-mongo
 ```
+### Redirect to previous page after login
+* https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
