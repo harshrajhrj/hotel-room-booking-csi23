@@ -4,6 +4,7 @@ const HotelSchema = new mongoose.Schema({
     hotel: {
         type: String,
         uppercase: true,
+        unique: true,
         required: true
     },
     location: {
@@ -20,25 +21,25 @@ const HotelSchema = new mongoose.Schema({
     },
     thumbnail: {
         type: mongoose.SchemaTypes.ObjectId,
-        required: true
+        default: null
     },
     pictures: [{
         type: mongoose.SchemaTypes.ObjectId,
-        default: ''
+        default: null
     }],
     no_of_rooms: {
         type: Number,
-        required: true
+        default: 10
     },
     no_of_available_rooms: {
         type: Number,
-        required: true
+        default: 10
     },
     no_of_booked_rooms: {
         type: Number,
-        required: true
+        default: 0
     },
-    ratings: {
+    rating: {
         type: Number,
         min: 1,
         max: 5,
@@ -47,6 +48,9 @@ const HotelSchema = new mongoose.Schema({
     rooms: [{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Room',
+        unique: true,
         default: null
     }]
 }, { collection: 'hotel', timestamps: true });
+
+module.exports = mongoose.model('Hotel', HotelSchema);

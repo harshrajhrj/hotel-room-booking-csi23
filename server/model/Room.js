@@ -6,6 +6,11 @@ const RoomSchema = new mongoose.Schema({
         enum: { values: ['Single bed', 'Double bed'], message: '{VALUE} is not supported' },
         required: true
     },
+    hotel: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Hotel',
+        required: true
+    },
     bedSize: {
         type: String,
         enum: { values: ['Small', 'Medium', 'Large', 'Extra large'], message: '{VALUE} is not supported' },

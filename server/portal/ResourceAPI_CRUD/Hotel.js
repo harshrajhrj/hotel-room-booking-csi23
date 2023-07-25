@@ -1,10 +1,10 @@
 const City = require('../../model/City');
-const State = require('../../model/State');
+const Hotel = require('../../model/Hotel');
 const app = require('express').Router();
 
 /**
  * BASE URL
- * /api/city/...
+ * /api/hotel/...
  */
 
 /**
@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
         /**
          * Schema keys that has to be exactly same as payload's object keys
          */
-        const required = ['city', 'iso', 'state', 'pincode'];
+        const required = ['hotel', 'location', 'rating'];
         payload = await payload.filter(function (p) {
             var flag = true;
             for (const ele of required)
@@ -40,9 +40,9 @@ app.post('/', async (req, res) => {
              */
             return flag;
         }).map(async (c) => {
-            var state = await State.findOne({ iso: c.state });
-            return { city: c.city, iso: c.iso, stateISO: c.state, state: state._id, pincode: c.pincode }
-        })
+            var city = await City.findOne({ city: c.location.city.toUpperCase() });
+            return { hotel: c.hotel, location: { city: city._id, street: c.location.street }, rating: c.rating }
+        });
 
         /**
          * Resolving all pending promises
@@ -52,14 +52,14 @@ app.post('/', async (req, res) => {
         /**
          * Inserted documents
          */
-        const newCities = await City.insertMany(payload, { ordered: false });
+        const newHotels = await Hotel.insertMany(payload, { ordered: false });
 
         /**
          * Finally, return the response body
          */
         return res.status(200).json({
             message: 'Inserted',
-            detail: newCities,
+            detail: newHotels,
             ignored: ignored
         })
     } catch (err) {
@@ -68,7 +68,7 @@ app.post('/', async (req, res) => {
          * Error handling
          */
         if (err.code === 11000) {
-            const detail = err.writeErrors.map(e => e.err.op.city + ' already exists!');
+            const detail = err.writeErrors.map(e => e.err.op.hotel + ' already exists!');
             return res.status(400).json({
                 message: 'Unique value error',
                 detail: detail,
@@ -81,17 +81,17 @@ app.post('/', async (req, res) => {
             })
         }
     }
-})
+});
 
 /**
  * Delete a resource from database
  */
-app.delete('/:stateISO/:iso', async (req, res) => {
+app.delete('/:id', async (req, res) => {
     try {
-        const deletedCity = await City.deleteOne({ iso: req.params.iso.toUpperCase(), stateISO: req.params.stateISO.toUpperCase() });
+        const deletedHotel = await Hotel.deleteOne({ _id: req.params.id });
         res.status(200).json({
             message: 'Deleted',
-            detail: deletedCity
+            detail: deletedHotel
         })
     } catch (err) {
         /**
@@ -101,6 +101,6 @@ app.delete('/:stateISO/:iso', async (req, res) => {
             message: 'Internal server error'
         })
     }
-})
+});
 
 module.exports = app;

@@ -1,0 +1,29 @@
+POST http://localhost:3000/api/hotel
+Content-Type: application/json
+
+[
+  {
+    "hotel": "ITC Grand Chola, Chennai",
+    "location": {
+      "city": "Chennai",
+      "street": "63, Anna Salai"
+    },
+    "rating": 4.4
+  },
+  {
+    "hotel": "The Park, Chennai",
+    "location": {
+      "city": "Chennai",
+      "street": "21, Cathedral Road"
+    },
+    "rating": 4.3
+  },
+  {
+    "hotel": "The Taj Coromandel, Chennai",
+    "location": {
+      "city": "Chennai",
+      "street": "37, Uthamar Gandhi Road"
+    },
+    "rating": 4.2
+  }
+]

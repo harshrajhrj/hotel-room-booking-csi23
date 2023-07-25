@@ -7,9 +7,9 @@ const app = require('express').Router();
  */
 
 /**
- * Put the resources into database
+ * Post the resources into database
  */
-app.put('/', async (req, res) => {
+app.post('/', async (req, res) => {
     /**
      * Ignored payload object
      */
