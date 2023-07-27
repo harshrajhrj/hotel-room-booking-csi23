@@ -1,8 +1,10 @@
+const PageController = require('./pageController');
 const app = require('express').Router();
 
 app.get('/', async (req, res) => {
     const guest = req.user;
-    res.render('portal.ejs', { guest });
+    const Page = new PageController('Home', true);
+    res.render('portal.ejs', { Page, guest });
 });
 
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));

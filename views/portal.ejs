@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel booking</title>
     <%- include('partials/stylesheetFiles.ejs') %>
+    <link rel="stylesheet" href="../../../../../../css/CardSlider.css">
 </head>
 <body>
     <%- include('partials/components/navigation.ejs') %>
+    <% if(Page.page === 'Home') { %>
+        <%- include('partials/home/hotelCarousel.ejs') %>
+    <% } %>
     <%- include('partials/components/footer.ejs') %>
 </body>
+<script src="../../../../../../js/CardSlider.js"></script>
 </html>

@@ -13,6 +13,15 @@ $candlelight: #fdd719;
 $tuatara: #2b2a28;
 $vis-vis: #ffec9f;
 ```
+## Carousel card slider
+### References
+* [Responsive card slider](https://youtu.be/qOO6lVMhmGc)<sup>[Code](https://www.codingnepalweb.com/responsive-card-slider-javascript/)</sup>
+* [Responsive card slider](https://youtu.be/JOdpkAJVub0)<sup>[Code](https://www.codingnepalweb.com/card-slider-html-css-javascript-swiperjs/)</sup>
+* [Owl carousel](https://youtu.be/BKKcGb80MOs)<sup>[Code](https://www.codingnepalweb.com/create-sliding-card-html-css-javascript/)</sup>
+* [Our team section carousel](https://youtu.be/k-Od6skhZfo)<sup>[Code](https://github.com/devmode-on/Card-Slider)</sup>
+### Swiperjs
+* https://swiperjs.com
+
 ## Payment gateway
 * https://developers.google.com/pay/api/android/guides/tutorial
 * https://youtube.com/playlist?list=PLOU2XLYxmsILkNW9d1Jw9rHLAEORuuS-9
