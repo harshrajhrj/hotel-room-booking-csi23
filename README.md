@@ -13,6 +13,8 @@ $candlelight: #fdd719;
 $tuatara: #2b2a28;
 $vis-vis: #ffec9f;
 ```
+## Box shadow
+* https://getcssscan.com/css-box-shadow-examples (#18)
 ## Carousel card slider
 ### References
 * [Responsive card slider](https://youtu.be/qOO6lVMhmGc)<sup>[Code](https://www.codingnepalweb.com/responsive-card-slider-javascript/)</sup>

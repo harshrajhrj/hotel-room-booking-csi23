@@ -53,6 +53,13 @@ app.use(passport.session())
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+/**
+ * Using Template Caching:
+ * Instead of lazy loading, you can utilize EJS template caching to improve performance. 
+ * EJS has built-in support for caching, which can reduce the overhead of reading and parsing templates for each request.
+ */
+app.set('view cache', true);
+
 // middleware to server static files with express
 app.use(express.static(path.join(__dirname, 'client')));
 
