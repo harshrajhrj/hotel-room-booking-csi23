@@ -58,7 +58,7 @@ app.set('views', path.join(__dirname, 'views'));
  * Instead of lazy loading, you can utilize EJS template caching to improve performance. 
  * EJS has built-in support for caching, which can reduce the overhead of reading and parsing templates for each request.
  */
-app.set('view cache', true);
+// app.set('view cache', true);
 
 // middleware to server static files with express
 app.use(express.static(path.join(__dirname, 'client')));

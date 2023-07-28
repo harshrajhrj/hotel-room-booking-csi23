@@ -29,6 +29,7 @@ $vis-vis: #ffec9f;
 * https://youtube.com/playlist?list=PLOU2XLYxmsILkNW9d1Jw9rHLAEORuuS-9
 * https://pay.google.com/business/console/?utm_source=yt-metadata&utm_medium=video&utm_campaign=integration
 * https://developers.google.com/pay/api/web/overview
+* https://razorpay.com/integrations/
 ## Storage
 * MongoDB
 ### MongoDB Storage

@@ -2,8 +2,83 @@
 
 .h-footer {
     footer {
+        width: auto;
+        max-width: 100%;
+        background-color: v.$candlelight;
+        padding: 20px 20px 5px 20px;
+        border-radius: 2px;
+
         .h-footer-container {
-            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: column;
+            line-height: 2rem;
+
+            .h-footer-items {
+                display: flex;
+                width: 100%;
+                font-size: 13px;
+                text-align: center;
+                column-gap: 10px;
+
+                .h-footer-author {
+                    flex-grow: 1;
+                }
+
+                .h-footer-social {
+                    display: flex;
+                    column-gap: 20px;
+                    justify-content: center;
+                    flex-grow: 1;
+                }
+
+                .h-footer-pnp {
+                    flex-grow: 1;
+                }
+
+                .h-footer-author::before,
+                .h-footer-social::before,
+                .h-footer-pnp::before {
+                    content: attr(data-content);
+                    color: v.$pirate-gold;
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: v.$ltr-spacing;
+                }
+
+                a {
+                    text-decoration: none;
+                    letter-spacing: v.$ltr-spacing;
+                    font-weight: 500;
+                    color: v.$pirate-gold;
+                    transition: color .1s ease-in-out;
+
+                    &:hover {
+                        color: v.$teak;
+                    }
+                }
+
+                @media screen and (max-width: 544px){
+                    flex-flow: column;
+                }
+            }
+
+            .h-footer-copy {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                    letter-spacing: v.$ltr-spacing;
+                    font-weight: 500;
+                    color: v.$tuatara;
+                    text-decoration: wavy;
+                    text-align: center;
+                }
+            }
         }
     }
 }

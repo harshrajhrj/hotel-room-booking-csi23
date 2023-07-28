@@ -15,7 +15,7 @@ mongoose.connection.on("connected", () => {
  * @type Object | An instance of class `GridFsStorage` used to store a file using GridFS
  * @class GridFsStorage
  */
-const hotelStorage = new GridFsStorage({
+const storage = new GridFsStorage({
     url: process.env.DB_URL,
     file: (req, file) => {
         return new Promise((resolve, reject) => {
@@ -31,9 +31,13 @@ const hotelStorage = new GridFsStorage({
 
 /**
  * Used to handle file upload from client form-data
+ * 
+ * The property name *storage* messed a lot while I was trying to upload files with another
+ * property name *hotelStorage* and passed the property to `multer({...})` instead of passing
+ * the property *hotelStorage*.
  */
 const upload = multer({
-    hotelStorage
+    storage
 })
 
 /**

@@ -1,8 +1,10 @@
-var swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    loop: true,
-    centerSlide: 'true',
+var swiper = new Swiper(".h-carousel-content", {
+    effect: "coverflow",
+    slidesPerView: "auto",
+    // spaceBetween: 25,
+    // loop: true,
+    // centerSlide: 'true',
+    centeredSlides: true,
     fade: 'true',
     grabCursor: 'true',
     pagination: {
@@ -17,6 +19,12 @@ var swiper = new Swiper(".slide-content", {
     autoplay: {
         delay: 5000,
         disableOnInteraction: false
+    },
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        slideShadows: false
     },
     breakpoints: {
         0: {
