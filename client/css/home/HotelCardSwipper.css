@@ -7,34 +7,38 @@
   font-family: "Poppins", sans-serif;
 }
 
-.h-carousel-container {
+section {
+  background: #ffec9f;
+  margin-top: 70px;
+}
+section .h-carousel-container {
   width: 100%;
   padding: 40px 0;
 }
-.h-carousel-container .h-carousel-content {
+section .h-carousel-container .h-carousel-content {
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
   padding: 10px 0px 35px 0px;
 }
-.h-carousel-container .h-carousel-content .h-card {
+section .h-carousel-container .h-carousel-content .h-card {
   border-radius: 25px;
   background-color: #fdd719;
   box-shadow: #b0a16b 0px 13px 27px -5px, #b0a16b 0px 8px 16px -8px;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content,
-.h-carousel-container .h-carousel-content .h-card .h-card-content {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content,
+section .h-carousel-container .h-carousel-content .h-card .h-card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 14px;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content {
   position: relative;
   row-gap: 5px;
   padding: 25px 0;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -43,8 +47,8 @@
   background-color: #b08902;
   border-radius: 25px 25px 0 25px;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::before,
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::before,
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
   content: "";
   position: absolute;
   right: 0;
@@ -53,11 +57,11 @@
   width: 40px;
   background-color: #b08902;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
   border-radius: 0 25px 0 0;
   background-color: #fdd719;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-image {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-image {
   position: relative;
   height: 150px;
   width: 150px;
@@ -65,7 +69,7 @@
   background: #ffec9f;
   padding: 3px;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-image .h-card-img {
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-image .h-card-img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -73,17 +77,17 @@
   border-radius: 50%;
   border: 4px solid #b0a16b;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-content .name {
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .name {
   font-size: 18px;
   font-weight: 500;
   color: #b08902;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-content .description {
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .description {
   font-size: 14px;
   color: #2b2a28;
   text-align: center;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button {
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button {
   border: none;
   font-size: 16px;
   color: #b08902;
@@ -94,39 +98,39 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button:hover {
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button:hover {
   color: #ffec9f;
   background: #b08902;
 }
-.h-carousel-container .swiper-navBtn {
+section .h-carousel-container .swiper-navBtn {
   color: #b0a16b;
   transition: color 0.3s ease;
 }
-.h-carousel-container .swiper-navBtn:hover {
+section .h-carousel-container .swiper-navBtn:hover {
   color: #b08902;
 }
-.h-carousel-container .swiper-navBtn::before,
-.h-carousel-container .swiper-navBtn::after {
+section .h-carousel-container .swiper-navBtn::before,
+section .h-carousel-container .swiper-navBtn::after {
   font-size: 35px;
 }
-.h-carousel-container .swiper-button-next {
+section .h-carousel-container .swiper-button-next {
   right: 0;
 }
-.h-carousel-container .swiper-button-prev {
+section .h-carousel-container .swiper-button-prev {
   left: 0;
 }
-.h-carousel-container .swiper-pagination-bullet {
+section .h-carousel-container .swiper-pagination-bullet {
   background-color: #b0a16b;
   opacity: 1;
 }
-.h-carousel-container .swiper-pagination-bullet-active {
+section .h-carousel-container .swiper-pagination-bullet-active {
   background-color: #b08902;
 }
 @media screen and (max-width: 768px) {
-  .h-carousel-container .h-carousel-content {
+  section .h-carousel-container .h-carousel-content {
     margin: 0 10px;
   }
-  .h-carousel-container .swiper-navBtn {
+  section .h-carousel-container .swiper-navBtn {
     display: none;
   }
 }/*# sourceMappingURL=HotelCardSwipper.css.map */

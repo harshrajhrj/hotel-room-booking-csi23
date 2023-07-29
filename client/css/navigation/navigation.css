@@ -1,8 +1,13 @@
+.h-nav {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+}
 .h-nav nav {
   display: flex;
-  width: auto;
-  max-width: 100%;
   background-color: #fdd719;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   padding: 3px;
   justify-content: space-between;
   align-items: center;
@@ -96,4 +101,67 @@
 .h-nav nav .h-nav-user button {
   font-size: 1.3rem;
   color: #567d92;
+}
+.h-nav nav .h-nav-user .h-nav-profile {
+  width: 200px;
+  background: #ffec9f;
+  color: #b08902;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-header a {
+  font-size: 13px;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-header a:hover {
+  background: #b08902;
+  color: #ffec9f;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body {
+  display: flex;
+  flex-flow: column;
+  row-gap: 5px;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-avatar {
+  width: 100%;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper hr {
+  background: #b08902;
+  height: 1.8px;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name {
+  width: 100%;
+  text-align: left;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name span {
+  display: block;
+  width: inherit;
+  color: #567d92;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 0.7px;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name span:hover {
+  color: #b08902;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper img {
+  border: 1px solid #b08902;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-profile-logout {
+  text-align: start;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-profile-logout button {
+  letter-spacing: 0.7px;
+  font-size: 15px;
+  padding: 0px;
+}
+.h-nav nav .h-nav-user .h-nav-profile button:hover {
+  color: #b08902;
+}
+.h-nav nav .h-nav-user img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=navigation.css.map */

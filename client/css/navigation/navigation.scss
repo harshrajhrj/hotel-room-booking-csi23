@@ -2,11 +2,15 @@
 $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
 
 .h-nav {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+
     nav {
         display: flex;
-        width: auto;
-        max-width: 100%;
         background-color: v.$candlelight;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
         padding: 3px;
         justify-content: space-between;
         align-items: center;
@@ -90,6 +94,7 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
 
             div {
                 padding: 0 0.375rem 0 0.375rem;
+
                 a {
                     color: v.$tuatara;
                     font-weight: 500;
@@ -114,6 +119,85 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
             button {
                 font-size: 1.3rem;
                 color: v.$smalt-blue;
+            }
+
+            .h-nav-profile {
+                width: 200px;
+                background: v.$vis-vis;
+                color: v.$pirate-gold;
+
+                .h-nav-profile-header {
+                    a {
+                        font-size: 13px;
+
+                        &:hover {
+                            background: v.$pirate-gold;
+                            color: v.$vis-vis;
+                        }
+                    }
+                }
+
+                .h-nav-profile-body {
+                    display: flex;
+                    flex-flow: column;
+                    row-gap: 5px;
+
+                    .h-nav-avatar-name-wrapper {
+                        display: flex;
+                        flex-flow: column;
+                        flex-wrap: wrap;
+
+                        .h-nav-profile-avatar {
+                            width: 100%;
+                        }
+
+                        hr {
+                            background: v.$pirate-gold;
+                            height: 1.8px;
+                        }
+
+                        .h-nav-profile-name {
+                            width: 100%;
+                            text-align: left;
+
+                            span {
+                                display: block;
+                                width: inherit;
+                                color: v.$smalt-blue;
+                                font-size: 15px;
+                                cursor: pointer;
+                                letter-spacing: v.$ltr-spacing;
+
+                                &:hover {
+                                    color: v.$pirate-gold;
+                                }
+                            }
+                        }
+
+                        img {
+                            border: 1px solid v.$pirate-gold;
+                        }
+                    }
+
+                    .h-nav-profile-logout {
+                        text-align: start;
+
+                        button {
+                            letter-spacing: v.$ltr-spacing;
+                            font-size: 15px;
+                            padding: 0px;
+                        }
+                    }
+                }
+
+                button:hover {
+                    color: v.$pirate-gold;
+                }
+            }
+
+            img {
+                border-radius: 50%;
+                object-fit: cover;
             }
         }
     }

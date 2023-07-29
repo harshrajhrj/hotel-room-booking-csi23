@@ -5,9 +5,10 @@ class PageController {
      * @param {*} page 
      * @param {*} carousel 
      */
-    constructor(page, carousel) {
+    constructor(page, ...carousel) {
         this.page = page;
-        this.carouselCard = carousel;
+        this.carouselCard = carousel || false;
+        console.log(carousel);
     }
 }
 

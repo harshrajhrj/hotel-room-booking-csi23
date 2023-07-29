@@ -25,9 +25,18 @@ const RoomSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    picture: {
+        type: mongoose.SchemaTypes.ObjectId,
+        default: null
+    },
     booked: {
         type: Boolean,
         default: false
+    },
+    bookedBy: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Booking',
+        default: null
     },
     checkIn: {
         type: Date,
@@ -48,17 +57,24 @@ const RoomSchema = new mongoose.Schema({
     }
 }, { collection: 'room', timestamps: true });
 
-RoomSchema.methods.calcAddOnsPrice(function () {
+/**
+ * Calculates AddOnPrice
+ * @returns Number
+ */
+RoomSchema.methods.calcAddOnsPrice = function () {
     let price = this.price;
     this.addOns.forEach(addOn => {
         price += addOn.price;
     })
-    this.price = price;
-})
+    return price;
+}
 
-RoomSchema.methods.checkInOutStatus(function () {
+/**
+ * Resets checkIn and checkOut if no booking
+ */
+RoomSchema.methods.checkInOutStatus = function () {
     if (!this.booked)
         this.checkIn = this.checkOut = null;
-})
+}
 
 module.exports = mongoose.model('Room', RoomSchema);

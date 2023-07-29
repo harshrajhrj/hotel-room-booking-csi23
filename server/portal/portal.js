@@ -9,4 +9,6 @@ app.get('/', async (req, res) => {
 
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));
 app.use('/api', require('./ResourceAPI_CRUD/API'));
+app.use('/v1', require('./Pages/Page'));
+
 module.exports = app;

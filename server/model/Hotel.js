@@ -53,4 +53,33 @@ const HotelSchema = new mongoose.Schema({
     }]
 }, { collection: 'hotel', timestamps: true });
 
+/**
+ * Calculate total rooms
+ */
+HotelSchema.methods.calcTotalRooms = function () {
+    this.no_of_rooms = this.rooms.length;
+}
+
+/**
+ * Calculate the available and booked rooms
+ */
+HotelSchema.methods.calcAvailableRooms = function () {
+    let count = 0;
+    for (const room of this.rooms) {
+        if (!room.booked) {
+            count++;
+        }
+    }
+    this.no_of_available_rooms = count;
+    this.no_of_booked_rooms = this.no_of_rooms - count;
+}
+
+/**
+ * Updates booking count
+ */
+HotelSchema.methods.BookRoom = function () {
+    this.no_of_available_rooms = this.no_of_available_rooms - 1;
+    this.no_of_booked_rooms = this.no_of_booked_rooms + 1;
+}
+
 module.exports = mongoose.model('Hotel', HotelSchema);

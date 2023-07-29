@@ -1,6 +1,9 @@
 @use "../variables" as v;
 
 .h-footer {
+    padding-left: calc(100% - 93%);
+    padding-right: calc(100% - 93%);
+    
     footer {
         width: auto;
         max-width: 100%;

@@ -16,9 +16,25 @@
         <div class="h-nav-user">
             <!-- <button type="button" class="btn">Sign in</button> -->
             <% if(guest) { %>
-                <form action="/auth/logout" method="post">
-                    <button type="submit" class="btn">Sign out</button>
-                </form>
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="<%=guest.avatar%>" alt="user_img" height="50" width="50" /></button>
+
+                <div class="h-nav-profile offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="h-nav-profile-header offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Profile</h5>
+                        <a href="" class="btn">Edit <i class="bi bi-pencil-square"></i></a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="h-nav-profile-body offcanvas-body">
+                        <div class="h-nav-avatar-name-wrapper">
+                            <div class="h-nav-profile-avatar"><img src="<%=guest.avatar%>" alt="user_img" height="80" width="80" /></div>
+                            <hr>
+                            <div class="h-nav-profile-name"><span><%=guest.name%></span></div>
+                        </div>
+                        <form action="/auth/logout" method="post" class="h-nav-profile-logout">
+                            <button type="submit" class="btn">Sign out <i class="bi bi-box-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
             <% } else { %>
                 <a href="/auth/login" class="btn">Sign in</a>
             <% } %>

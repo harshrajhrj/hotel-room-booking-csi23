@@ -32,6 +32,9 @@ $vis-vis: #ffec9f;
 * https://razorpay.com/integrations/
 ## Storage
 * MongoDB
+## MongoDB database tools
+* https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+* https://www.mongodb.com/docs/database-tools/
 ### MongoDB Storage
 * GridFS<sup>[Link](https://www.mongodb.com/docs/drivers/node/current/fundamentals/gridfs/#overview)</sup>
 * https://github.com/aheckmann/gridfs-stream
@@ -61,3 +64,8 @@ npm install connect-mongo
 ```
 ### Redirect to previous page after login
 * https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
+## Things to do
+* Allow dynamic booking, that
+    * booking in advance.
+    * if already booked, then look for the other dates for that particular room.
+    * room - addOns

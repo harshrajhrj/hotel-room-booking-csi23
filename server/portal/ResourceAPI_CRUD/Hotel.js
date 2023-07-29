@@ -2,6 +2,7 @@ const City = require('../../model/City');
 const Hotel = require('../../model/Hotel');
 const app = require('express').Router();
 const FileHandler = require('../../gridFsFiles/File');
+const checkFileSize = require('../../gridFsFiles/CheckFileSize');
 
 /**
  * BASE URL
@@ -86,13 +87,15 @@ app.post('/', async (req, res) => {
 
 /**
  * Retrieve hotel
+ * @param id - Hotel Object Id
  */
 app.get('/:id', async (req, res) => {
-    res.json(await Hotel.findOne({ _id: req.params.id }));
-})
+    res.json(await Hotel.findById(req.params.id).populate('rooms').populate('location.city'));
+});
 
 /**
  * Delete a resource from database
+ * @param id - Hotel Object Id
  */
 app.delete('/:id', async (req, res) => {
     try {
@@ -112,98 +115,45 @@ app.delete('/:id', async (req, res) => {
 });
 
 /**
- * @var fileSizeLimit restricts file greater than 1 MB
- */
-const fileSizeLimit = 1 * 1024 * 1024; //1 MB
-
-/**
- * Middleware to check the permitted files to be considered(i.e. the file size within range)
- * and rejects the file having file size out of range.
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- * @returns Callback
- */
-const checkFileSize = (req, res, next) => {
-
-    /**
-     * Middleware req body variables for carrying the file status
-     */
-    req.body["uploaded"] = [];
-    req.body["discarded"] = [];
-    req.body["missing"] = [];
-
-    /**
-     * Checks if file exist or not
-     */
-    if (!req.files) {
-        return res.status(400).json({ error: 'File size limit exceeded or no file uploaded.' });
-    }
-
-    /**
-     * If file exists, then size checking for thumbnail file
-     */
-    if (req.files['thumbnail'])
-        if (req.files['thumbnail'][0].size > fileSizeLimit) {
-            FileHandler.delete(req.files['thumbnail'][0].id);
-            req.body.discarded.push(['thumbnail', req.files['thumbnail'][0].originalname]);
-        } else {
-            req.body.uploaded.push(['thumbnail', req.files['thumbnail'][0].originalname, req.files['thumbnail'][0].id]);
-        }
-    /**
-     * If thumbnail missing
-     */
-    else
-        req.body.missing.push(['thumbnail', 'missing']);
-
-    /**
-     * If file exists, then size checking for thumbnail file
-     */
-    if (req.files['pictures']) {
-        for (var i = 0; i < req.files['pictures'].length; i++) {
-            if (req.files['pictures'][i].size > fileSizeLimit) {
-                FileHandler.delete(req.files['pictures'][i].id);
-                req.body.discarded.push(['pictures', req.files['pictures'][i].originalname]);
-            } else {
-                req.body.uploaded.push(['pictures', req.files['pictures'][i].originalname, req.files['pictures'][i].id]);
-            }
-        }
-    }
-    next();
-};
-
-/**
  * Upload hotel files using the hotel's Object id
+ * @param id - Hotel Object Id
  */
 app.post('/file/:id', FileHandler.upload.fields([{ name: 'thumbnail', maxCount: 1 }, { name: 'pictures' }]), checkFileSize, async (req, res) => {
-    let thumbnail = null;
-    let pictures = [];
+    try {
+        let thumbnail = null;
+        let pictures = [];
 
-    /**
-     * Arrange the files(to be uploaded) to thumnail(var) and pictures(var) according to the file type.
-     */
-    for (const file of req.body.uploaded) {
-        if (file[0] === 'thumbnail') {
-            thumbnail = file[2];
-        } else if (file[0] === 'pictures') {
-            pictures.push(file[2]);
-        }
-    }
-
-    /**
-     * Add the file id to the hotel document and log the document after saving
-     */
-    console.log(await Hotel.findByIdAndUpdate(req.params.id, {
-        $set: {
-            thumbnail: thumbnail
-        },
-        $push: {
-            pictures: {
-                $each: pictures
+        /**
+         * Arrange the files(to be uploaded) to thumnail(var) and pictures(var) according to the file type.
+         */
+        for (const file of req.body.uploaded) {
+            if (file[0] === 'thumbnail') {
+                thumbnail = file[2];
+            } else if (file[0] === 'pictures') {
+                pictures.push(file[2]);
             }
         }
-    }, { upsert: true }))
-    res.json(req.body);
+
+        /**
+         * Add the file id to the hotel document and log the document after saving
+         */
+        console.log(await Hotel.findByIdAndUpdate(req.params.id, {
+            $set: {
+                thumbnail: thumbnail
+            },
+            $push: {
+                pictures: {
+                    $each: pictures
+                }
+            }
+        }, { upsert: true }))
+        res.json(req.body);
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({
+            message: 'Server error'
+        })
+    }
 });
 
 module.exports = app;
