@@ -14,4 +14,5 @@ SearchInput.addEventListener('input', (e) => {
 SearchCancel.addEventListener('click', (e) => {
     e.preventDefault();
     SearchInput.value = "";
+    SearchCancel.classList.add('hidden');
 });
