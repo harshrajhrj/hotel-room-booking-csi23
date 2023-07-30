@@ -1,6 +1,4 @@
 /node_modules
 
 # OAuth Cred
-.env.CLIENT_ID
-.env.CLIENT_SECRET
-.env.CLIENT_REDIRECT
+.env
