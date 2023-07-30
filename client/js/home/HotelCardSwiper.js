@@ -16,10 +16,10 @@ var swiper = new Swiper(".h-carousel-content", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-    },
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: false
+    // },
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
@@ -30,10 +30,10 @@ var swiper = new Swiper(".h-carousel-content", {
         0: {
             slidesPerView: 1,
         },
-        520: {
+        650: {
             slidesPerView: 2,
         },
-        950: {
+        1096: {
             slidesPerView: 3,
         },
     },

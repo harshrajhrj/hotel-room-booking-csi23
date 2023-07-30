@@ -114,51 +114,52 @@
   background: #b08902;
   color: #ffec9f;
 }
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body {
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form {
+  width: 100%;
+  height: 100%;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper {
   display: flex;
   flex-flow: column;
   row-gap: 5px;
+  align-items: flex-start;
 }
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper {
-  display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
-}
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-avatar {
-  width: 100%;
-}
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper hr {
-  background: #b08902;
-  height: 1.8px;
-}
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name {
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper div {
   width: 100%;
   text-align: left;
+  padding: 5px;
+  border-radius: 3px;
+  transition: background 0.1s ease-in-out;
 }
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name span {
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper div:hover:not(.h-nav-profile-avatar) {
+  background: #fcf2cc;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper .h-nav-profile-avatar {
+  text-align: center;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper hr {
+  background: #b08902;
+  width: 100%;
+  height: 1.8px;
+}
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper span,
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper a,
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper button {
   display: block;
   width: inherit;
+  font-size: 13px;
+  letter-spacing: 0.7px;
   color: #567d92;
-  font-size: 15px;
-  cursor: pointer;
-  letter-spacing: 0.7px;
+  text-decoration: none;
+  text-align: left;
 }
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper .h-nav-profile-name span:hover {
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper span:hover,
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper a:hover,
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper button:hover {
   color: #b08902;
 }
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-avatar-name-wrapper img {
-  border: 1px solid #b08902;
-}
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-profile-logout {
-  text-align: start;
-}
-.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body .h-nav-profile-logout button {
-  letter-spacing: 0.7px;
-  font-size: 15px;
+.h-nav nav .h-nav-user .h-nav-profile .h-nav-profile-body form .h-nav-profile-wrapper button {
   padding: 0px;
-}
-.h-nav nav .h-nav-user .h-nav-profile button:hover {
-  color: #b08902;
 }
 .h-nav nav .h-nav-user img {
   border-radius: 50%;

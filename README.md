@@ -65,6 +65,8 @@ npm install connect-mongo
 ### Redirect to previous page after login
 * https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
 ## Things to do
+* Migrate current local db to virtual machine
+* Change redirect uri on cloud.google.com and .env
 * Allow dynamic booking, that
     * booking in advance.
     * if already booked, then look for the other dates for that particular room.

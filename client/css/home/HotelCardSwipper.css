@@ -7,10 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-section {
-  background: #ffec9f;
-  margin-top: 70px;
-}
 section .h-carousel-container {
   width: 100%;
   padding: 40px 0;
@@ -44,8 +40,30 @@ section .h-carousel-container .h-carousel-content .h-card .h-card-image-content 
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #b08902;
+  background-color: #2b2a28;
   border-radius: 25px 25px 0 25px;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-icons {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  font-size: 20px;
+  display: flex;
+  flex-flow: column;
+  row-gap: 5px;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 9999;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-icons span,
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-icons a {
+  color: #fcf2cc;
+  text-decoration: none;
+  padding: 4px;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-icons span:hover,
+section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-icons a:hover {
+  color: #ffec9f;
 }
 section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::before,
 section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
@@ -55,7 +73,7 @@ section .h-carousel-container .h-carousel-content .h-card .h-card-image-content 
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #b08902;
+  background-color: #2b2a28;
 }
 section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .overlay::after {
   border-radius: 0 25px 0 0;
@@ -63,8 +81,8 @@ section .h-carousel-container .h-carousel-content .h-card .h-card-image-content 
 }
 section .h-carousel-container .h-carousel-content .h-card .h-card-image-content .h-card-image {
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background: #ffec9f;
   padding: 3px;
@@ -81,13 +99,35 @@ section .h-carousel-container .h-carousel-content .h-card .h-card-content .name 
   font-size: 18px;
   font-weight: 500;
   color: #b08902;
-}
-section .h-carousel-container .h-carousel-content .h-card .h-card-content .description {
-  font-size: 14px;
-  color: #2b2a28;
+  width: 100%;
   text-align: center;
 }
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .description {
+  font-size: 12px;
+  color: #b08902;
+  width: 100%;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .description .h-card-room-detail {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 5px;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .description .h-card-room-detail .h-card-number {
+  color: #2b2a28;
+}
 section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button {
+  display: flex;
+  justify-content: space-between;
+}
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button a,
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button button {
   border: none;
   font-size: 16px;
   color: #b08902;
@@ -97,8 +137,10 @@ section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-car
   margin: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
-section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button:hover {
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button a:hover,
+section .h-carousel-container .h-carousel-content .h-card .h-card-content .h-card-button button:hover {
   color: #ffec9f;
   background: #b08902;
 }

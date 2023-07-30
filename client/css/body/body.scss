@@ -1,6 +1,11 @@
 @use "../variables" as v;
 
 .h-body {
+    margin-top: 70px;
     padding-left: calc(100% - 93%);
     padding-right: calc(100% - 93%);
+
+    section {
+        background: v.$vis-vis;
+    }
 }

@@ -1,10 +1,13 @@
+const Hotel = require('../model/Hotel');
 const PageController = require('./pageController');
 const app = require('express').Router();
 
 app.get('/', async (req, res) => {
     const guest = req.user;
     const Page = new PageController('Home', true);
-    res.render('portal.ejs', { Page, guest });
+    const hotel = await fetch(`${process.env.SERVER_URL}/api/hotel`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
+    const hotels = await hotel.json();
+    res.render('portal.ejs', { Page, guest, hotels });
 });
 
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));

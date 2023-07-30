@@ -94,6 +94,13 @@ app.get('/:id', async (req, res) => {
 });
 
 /**
+ * Retrieve all hotels
+ */
+app.get('/', async (req, res) => {
+    res.json(await Hotel.find());
+});
+
+/**
  * Delete a resource from database
  * @param id - Hotel Object Id
  */
@@ -155,5 +162,13 @@ app.post('/file/:id', FileHandler.upload.fields([{ name: 'thumbnail', maxCount: 
         })
     }
 });
+
+/**
+ * Retrieve hotel files using the file's Object Id
+ * @param id - File Object Id
+ */
+app.get('/file/:id', async (req, res) => {
+    FileHandler.retrieve(req, res);
+})
 
 module.exports = app;

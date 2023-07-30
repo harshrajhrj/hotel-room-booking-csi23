@@ -2,159 +2,39 @@
     <div class="h-carousel-container swiper">
         <div class="h-carousel-content">
             <div class="card-wrapper swiper-wrapper">
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
+                <% for(var i = 0; i < hotels.length; i++) { %>
+                    <% if(hotels[i].thumbnail) { %>
+                    <div class="h-card swiper-slide">
+                        <div class="h-card-image-content">
+                            <span class="overlay"></span>
 
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
+                            <div class="h-card-icons">
+                                <span class="h-card-rating" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Rating"><%=hotels[i].rating%> <i class="bi bi-star-half"></i></span>
+                                <a href="" class="h-card-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Share"><i class="bi bi-share-fill"></i></a>
+                            </div>
+
+                            <div class="h-card-image">
+                                <img src="<%="/api/hotel/file/" + hotels[i].thumbnail%>" alt="hotel" class="h-card-img">
+                            </div>
+                        </div>
+
+                        <div class="h-card-content">
+                            <h2 class="name"><%=hotels[i].hotel%></h2>
+                            <div class="description">
+                                <div class="h-card-room-detail">
+                                    <div class="h-card-rooms"><span>Rooms : </span><span class="h-card-number"><%=hotels[i].no_of_rooms%> <i class="bi bi-bookmark-fill"></i></span></div>
+                                    <div class="h-card-available"><span>Open : </span><span class="h-card-number"><%=hotels[i].no_of_available_rooms%> <i class="bi bi-bookmark"></i></span></div>
+                                    <div class="h-card-booked"><span>Booked : </span><span class="h-card-number"><%=hotels[i].no_of_booked_rooms%> <i class="bi bi-bookmark-check"></i></span></div>
+                                </div>
+                            </div>
+                            <div class="h-card-button">
+                                <a href="" class="h-card-book-now">Book now <i class="bi bi-airplane"></i></a>
+                                <a href="" class="h-card-view-more">View more <i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
-                <div class="h-card swiper-slide">
-                    <div class="h-card-image-content">
-                        <span class="overlay"></span>
-
-                        <div class="h-card-image">
-                            <img src="../../../../../../src/Profile_resize.jpg" alt="" class="h-card-img">
-                        </div>
-                    </div>
-
-                    <div class="h-card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="h-card-button">View More</button>
-                    </div>
-                </div>
+                    <% } %>
+                <% } %>
             </div>
         </div>
 

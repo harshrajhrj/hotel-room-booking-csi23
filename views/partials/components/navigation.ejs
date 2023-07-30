@@ -25,13 +25,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="h-nav-profile-body offcanvas-body">
-                        <div class="h-nav-avatar-name-wrapper">
-                            <div class="h-nav-profile-avatar"><img src="<%=guest.avatar%>" alt="user_img" height="80" width="80" /></div>
-                            <hr>
-                            <div class="h-nav-profile-name"><span><%=guest.name%></span></div>
-                        </div>
                         <form action="/auth/logout" method="post" class="h-nav-profile-logout">
-                            <button type="submit" class="btn">Sign out <i class="bi bi-box-arrow-right"></i></button>
+                            <div class="h-nav-profile-wrapper">
+                                <div class="h-nav-profile-avatar"><img src="<%=guest.avatar%>" alt="user_img" height="80" width="80" /></div>
+                                <hr>
+                                <div class="h-nav-profile-name"><span><%=guest.name%></span></div>
+                                <div class="h-nav-profile-bookings"><a href="">Bookings</a></div>
+                                <div class="h-nav-profile-logout"><button type="submit" class="btn">Sign out <i class="bi bi-box-arrow-right"></i></button></div>
+                            </div>
                         </form>
                     </div>
                 </div>

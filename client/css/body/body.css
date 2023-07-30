@@ -1,4 +1,8 @@
 .h-body {
+  margin-top: 70px;
   padding-left: 7%;
   padding-right: 7%;
+}
+.h-body section {
+  background: #ffec9f;
 }/*# sourceMappingURL=body.css.map */
