@@ -2,6 +2,3 @@
 
 # OAuth Cred
 .env
-.env.CLIENT_ID
-.env.CLIENT_SECRET
-.env.CLIENT_REDIRECT
