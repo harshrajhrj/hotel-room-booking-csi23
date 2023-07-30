@@ -13,7 +13,7 @@ section {
     .h-carousel-container {
         // max-width: 1120px;
         width: 100%;
-        padding: 40px 0;
+        padding: 20px 0;
 
         .h-carousel-content {
             margin: 0 40px;
@@ -52,12 +52,13 @@ section {
                     .h-card-icons {
                         position: absolute;
                         right: 0;
-                        margin-right: 15px;
-                        font-size: 20px;
+                        top: 3px;
+                        margin-right: 10px;
+                        font-size: 15px;
 
                         display: flex;
                         flex-flow: column;
-                        row-gap: 5px;
+                        row-gap: 3px;
                         align-items: flex-end;
                         justify-content: center;
 
@@ -110,12 +111,17 @@ section {
                 }
 
                 .h-card-content {
-                    .name {
-                        font-size: 18px;
-                        font-weight: 500;
-                        color: v.$pirate-gold;
+                    .h-card-name {
                         width: 100%;
-                        text-align: center;
+
+                        .name {
+                            font-size: 18px;
+                            font-weight: 500;
+                            color: v.$pirate-gold;
+                            width: 100%;
+                            text-align: center;
+                            overflow: -moz-hidden-unscrollable;
+                        }
                     }
 
                     .description {

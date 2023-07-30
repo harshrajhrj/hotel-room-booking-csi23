@@ -24,9 +24,9 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
         .h-nav-searchbar {
             position: relative;
             align-items: center;
-            width: calc(100% - 60%);
+            width: calc(100% - 80%);
             background: v.$vis-vis;
-            flex-grow: 1.1;
+            flex-grow: 1;
             border-radius: 0.275rem;
 
             .h-nav-search-label {
@@ -63,19 +63,27 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
                 }
             }
 
-            .h-nav-search-cancel {
+            .h-nav-search-control {
                 position: absolute;
                 right: 5px;
-                cursor: pointer;
+
+                display: flex;
                 background: v.$vis-vis;
+                padding: 4px;
+                gap: 3px;
 
-                i {
-                    padding: 0.275rem 0.375rem 0.275rem 0.375rem;
+                .h-nav-search-cancel,
+                .h-nav-search-filter {
+                    cursor: pointer;
 
-                    &:hover {
-                        background: v.$candlelight;
-                        border-radius: 100%;
-                        color: v.$smalt-blue;
+                    i {
+                        padding: 0.275rem 0.375rem 0.275rem 0.375rem;
+
+                        &:hover {
+                            background: v.$candlelight;
+                            border-radius: 50%;
+                            color: v.$smalt-blue;
+                        }
                     }
                 }
             }
@@ -88,7 +96,7 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
 
         .h-nav-advertise {
             flex-grow: 0.5;
-            justify-content: space-evenly;
+            justify-content: flex-end;
             letter-spacing: v.$ltr-spacing;
             gap: 10px;
 
