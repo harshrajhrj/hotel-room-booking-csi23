@@ -20,9 +20,9 @@
 .h-nav nav .h-nav-searchbar {
   position: relative;
   align-items: center;
-  width: 40%;
+  width: 20%;
   background: #ffec9f;
-  flex-grow: 1.1;
+  flex-grow: 1;
   border-radius: 0.275rem;
 }
 .h-nav nav .h-nav-searchbar .h-nav-search-label {
@@ -55,18 +55,26 @@
 .h-nav nav .h-nav-searchbar .h-nav-search-inp::placeholder {
   width: 80%;
 }
-.h-nav nav .h-nav-searchbar .h-nav-search-cancel {
+.h-nav nav .h-nav-searchbar .h-nav-search-control {
   position: absolute;
   right: 5px;
-  cursor: pointer;
+  display: flex;
   background: #ffec9f;
+  padding: 4px;
+  gap: 3px;
 }
-.h-nav nav .h-nav-searchbar .h-nav-search-cancel i {
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-cancel,
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-filter {
+  cursor: pointer;
+}
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-cancel i,
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-filter i {
   padding: 0.275rem 0.375rem 0.275rem 0.375rem;
 }
-.h-nav nav .h-nav-searchbar .h-nav-search-cancel i:hover {
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-cancel i:hover,
+.h-nav nav .h-nav-searchbar .h-nav-search-control .h-nav-search-filter i:hover {
   background: #fdd719;
-  border-radius: 100%;
+  border-radius: 50%;
   color: #567d92;
 }
 .h-nav nav .h-nav-advertise,
@@ -75,7 +83,7 @@
 }
 .h-nav nav .h-nav-advertise {
   flex-grow: 0.5;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   letter-spacing: 0.7px;
   gap: 10px;
 }
