@@ -24,6 +24,14 @@ section {
                 height: 250px;
                 object-fit: cover;
             }
+
+            .h-hotel-swiper-button-next {
+                right: 0;
+            }
+    
+            .h-hotel-swiper-button-prev {
+                left: 0;
+            }
         }
 
         .h-hotel-detail {

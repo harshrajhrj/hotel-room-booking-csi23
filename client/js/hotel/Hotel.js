@@ -13,8 +13,8 @@ var swiper = new Swiper(".h-hotel-carousel-content", {
         dynamicBullets: true,
     },
     navigation: {
-        nextEl: ".h-hotel-swiper-button-next",
-        prevEl: ".h-hotel-swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     autoplay: {
         delay: 5000,
