@@ -90,7 +90,15 @@ app.post('/', async (req, res) => {
  * @param id - Hotel Object Id
  */
 app.get('/:id', async (req, res) => {
-    res.json(await Hotel.findById(req.params.id).populate('rooms').populate('location.city'));
+    res.json(await Hotel.findById(req.params.id).populate('rooms').populate({
+        path: 'location.city',
+        populate: {
+            path: 'state',
+            populate: {
+                path: 'country'
+            }
+        }
+    }));
 });
 
 /**

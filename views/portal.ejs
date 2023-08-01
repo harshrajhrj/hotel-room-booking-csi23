@@ -12,11 +12,14 @@
     <div class="h-body">
         <% if(Page.page === 'Home') { %>
             <%- include('partials/home/hotelCarousel.ejs') %>
+        <% } else if(Page.page === 'Hotel') { %>
+            <%- include('partials/hotel/hotel.ejs') %>
         <% } %>
     </div>
     <%- include('partials/components/footer.ejs') %>
 </body>
-<script src="../../../../../../js/Navigation.js"></script>
 <script src="../../../../../../js/Tooltip.js"></script>
+<script src="../../../../../../js/Navigation.js"></script>
 <script src="../../../../../../js/home/HotelCardSwiper.js"></script>
+<script src="../../../../../../js/hotel/Hotel.js"></script>
 </html>

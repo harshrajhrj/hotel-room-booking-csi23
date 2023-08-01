@@ -2,6 +2,9 @@ const Hotel = require('../model/Hotel');
 const PageController = require('./pageController');
 const app = require('express').Router();
 
+/**
+ * Render the home page
+ */
 app.get('/', async (req, res) => {
     const guest = req.user;
     const Page = new PageController('Home', true);

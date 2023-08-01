@@ -153,4 +153,12 @@ app.post('/file/:id', FileHandler.upload.single('room'), checkFileSize, async (r
     }
 });
 
+/**
+ * Retrieve room file using the file's Object Id
+ * @param id - File Object Id
+ */
+app.get('/file/:id', async (req, res) => {
+    FileHandler.retrieve(req, res);
+})
+
 module.exports = app;
