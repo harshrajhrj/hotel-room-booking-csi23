@@ -1,4 +1,3 @@
-const Hotel = require('../model/Hotel');
 const PageController = require('./pageController');
 const app = require('express').Router();
 
@@ -6,7 +5,7 @@ const app = require('express').Router();
  * Render the home page
  */
 app.get('/', async (req, res) => {
-    const guest = req.user;
+    const guest = req.user || null;
     const Page = new PageController('Home', true);
     const hotel = await fetch(`${process.env.SERVER_URL}/api/hotel`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
     const hotels = await hotel.json();

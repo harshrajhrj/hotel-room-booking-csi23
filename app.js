@@ -33,7 +33,7 @@ app.use(expressSession({
 }))
 
 // authenticate the session
-app.use(passport.authenticate('session'));
+// app.use(passport.authenticate('session'));
 
 // flash middleware to store text messages in session
 app.use(flash());

@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 module.exports = async function ConnectDB() {
     try {
