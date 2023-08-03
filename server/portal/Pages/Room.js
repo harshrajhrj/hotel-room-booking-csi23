@@ -1,6 +1,7 @@
 const BookedGuest = require('../../model/BookedGuest');
 const Hotel = require('../../model/Hotel');
 const Room = require('../../model/Room');
+const PageController = require('../pageController');
 const app = require('express').Router();
 
 /**
@@ -14,10 +15,11 @@ const app = require('express').Router();
  */
 app.get('/:id', async (req, res) => {
     try {
+        const guest = req.user || null;
         const room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
         await room.json();
         const Page = new PageController('Room', { 'pictures': true });
-        res.render('portal.ejs', { Page, room });
+        res.render('portal.ejs', { Page, guest, room });
     } catch (err) {
         console.log(err.message);
         res.status(500).json({

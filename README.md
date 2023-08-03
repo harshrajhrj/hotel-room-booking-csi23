@@ -30,6 +30,10 @@ $vis-vis: #ffec9f;
 * https://pay.google.com/business/console/?utm_source=yt-metadata&utm_medium=video&utm_campaign=integration
 * https://developers.google.com/pay/api/web/overview
 * https://razorpay.com/integrations/
+### Google Pay API Reference
+* https://youtu.be/kH0nafGhbww
+* https://developers.google.com/pay/api/web/reference/client
+* [Demos](https://developers.google.com/pay/api/web/guides/resources/demos)
 ## Storage
 * MongoDB
 ## MongoDB database tools
