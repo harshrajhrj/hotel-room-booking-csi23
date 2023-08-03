@@ -12,8 +12,15 @@ app.get('/', async (req, res) => {
     res.render('portal.ejs', { Page, guest, hotels });
 });
 
+function isAuthorized(req, res, next) {
+    if (req.user)
+        next();
+    else
+        res.redirect('/');
+}
+
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));
 app.use('/api', require('./ResourceAPI_CRUD/API'));
-app.use('/v1', require('./Pages/Page'));
+app.use('/v1', isAuthorized, require('./Pages/Page'));
 
 module.exports = app;

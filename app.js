@@ -2,17 +2,26 @@ const ConnectDB = require('./ConnectDB');
 ConnectDB();
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const expressSession = require('express-session');
-const flash = require('connect-flash');
 const mongoSession = require('connect-mongo');
 const path = require('path');
 const passport = require('passport');
 require('./server/portal/OAuth_Authentication/GoogleOAuth');
+const flash = require('connect-flash');
 const app = express();
 
 // middleware to keep the incoming objects in JSON format
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+        methods: "GET,POST,PUT,DELETE",
+        credentials: true,
+    })
+);
 
 // creating a session middleware
 app.use(expressSession({
@@ -21,7 +30,7 @@ app.use(expressSession({
         maxAge: 60000 * 60 * 24
     },
     saveUninitialized: false,
-    name: 'hotel room booking',
+    name: 'hotel-room-booking',
     resave: false,
 
     // using MongoDB based session storage
@@ -33,21 +42,23 @@ app.use(expressSession({
 }))
 
 // authenticate the session
-// app.use(passport.authenticate('session'));
+app.use(passport.authenticate('session'));
+
+// using passport session to store the guest in session object
+app.use(passport.initialize())
+app.use(passport.session())
 
 // flash middleware to store text messages in session
 app.use(flash());
 
 // type of flash messages
 app.use((req, res, next) => {
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
+    if (req.user) {
+        res.locals.success = req.flash('success');
+        res.locals.error = req.flash('error');
+    }
     next();
 })
-
-// using passport session to store the guest in session object
-app.use(passport.initialize())
-app.use(passport.session())
 
 // view engine set to ejs
 app.set('view engine', 'ejs');
