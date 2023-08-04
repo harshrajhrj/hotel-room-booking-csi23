@@ -9,14 +9,16 @@ app.get('/', async (req, res) => {
     const Page = new PageController('Home', true);
     const hotel = await fetch(`${process.env.SERVER_URL}/api/hotel`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
     const hotels = await hotel.json();
-    res.render('portal.ejs', { Page, guest, hotels });
+    res.render('portal.ejs', { Page, guest, hotels, messages: req.flash('success') });
 });
 
 function isAuthorized(req, res, next) {
     if (req.user)
         next();
-    else
+    else {
+        req.flash('error', 'Please sign in to continue!');
         res.redirect('/');
+    }
 }
 
 app.use('/auth', require('./OAuth_Authentication/LoginOAuth'));

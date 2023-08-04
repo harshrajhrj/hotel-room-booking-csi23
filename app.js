@@ -53,10 +53,8 @@ app.use(flash());
 
 // type of flash messages
 app.use((req, res, next) => {
-    if (req.user) {
-        res.locals.success = req.flash('success');
-        res.locals.error = req.flash('error');
-    }
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
     next();
 })
 

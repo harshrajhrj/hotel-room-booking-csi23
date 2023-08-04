@@ -16,8 +16,8 @@ const app = require('express').Router();
 app.get('/:id', async (req, res) => {
     try {
         const guest = req.user || null;
-        const room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
-        await room.json();
+        let room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
+        room = await room.json();
         const Page = new PageController('Room', { 'pictures': true });
         res.render('portal.ejs', { Page, guest, room });
     } catch (err) {
@@ -32,9 +32,11 @@ app.get('/:id', async (req, res) => {
  * Book a specific room
  * @param id - Room Object Id
  */
-app.post('/book/:id', async (req, res) => {
+app.post('/checkout/:id', async (req, res) => {
     try {
-        const { bookedFrom, checkOut, hotelId, receipt } = req.body;
+        const { checkIn, checkOut, days } = req.body;
+        console.log(req.body);
+        return res.json('Fucked');
 
         const room = await Room.findById(req.params.id);
 
@@ -53,7 +55,7 @@ app.post('/book/:id', async (req, res) => {
             guestId: req.user._id,
             roomId: req.params.id,
             bookedOn: new Date().toISOString(),
-            bookedFrom: bookedFrom,
+            bookedFrom: checkIn,
             checkOut: checkOut
         });
         await NewBooking.save();
@@ -62,7 +64,7 @@ app.post('/book/:id', async (req, res) => {
          * Update booking detail in room document
          */
         room.booked = true;
-        room.checkIn = bookedFrom;
+        room.checkIn = checkIn;
         room.checkOut = checkOut;
         room.bookedBy = NewBooking._id;
         await room.save();
@@ -75,6 +77,7 @@ app.post('/book/:id', async (req, res) => {
         await hotel.save();
 
         // redirect to payment
+        res.redirect(`/v1/room/checkout/pay/${req.params.id}`);
     } catch (err) {
         console.log(err.message);
         res.status(500).json({
@@ -82,5 +85,13 @@ app.post('/book/:id', async (req, res) => {
         })
     }
 });
+
+app.get('/checkout/pay/id', async (req, res) => {
+    try {
+
+    } catch (err) {
+        console.log(err.message);
+    }
+})
 
 module.exports = app;

@@ -1,7 +1,9 @@
 @use "../variables" as v;
 
 section {
-    .h-hotel-section-1 {
+
+    .h-hotel-section,
+    .h-room-section {
         display: flex;
         flex-flow: column;
         // align-items: center;
@@ -28,13 +30,14 @@ section {
             .h-hotel-swiper-button-next {
                 right: 0;
             }
-    
+
             .h-hotel-swiper-button-prev {
                 left: 0;
             }
         }
 
-        .h-hotel-detail {
+        .h-hotel-detail,
+        .h-room-detail {
             flex-grow: 1;
             margin: 0 40px;
             padding: 10px 0px 35px 0px;
@@ -45,7 +48,8 @@ section {
             gap: 3px;
             letter-spacing: v.$ltr-spacing;
 
-            .h-hotel-header {
+            .h-hotel-header,
+            .h-room-header {
                 color: v.$pirate-gold;
                 width: 100%;
                 text-align: center;
@@ -55,7 +59,8 @@ section {
                 }
             }
 
-            .h-hotel-address {
+            .h-hotel-address,
+            .h-room-address {
                 display: flex;
                 flex-flow: column;
                 gap: 1px;
@@ -78,25 +83,31 @@ section {
                 }
             }
 
-            .h-hotel-rooms {
+            .h-hotel-rooms,
+            .h-room-meta-data {
                 display: flex;
-                flex-flow: column wrap;
+                flex-flow: column;
                 justify-content: space-between;
                 width: 100%;
+                row-gap: 4px;
 
-                .h-hotel-room-data {
+                .h-hotel-room-data,
+                div {
                     display: flex;
                     flex-flow: row wrap;
-                    justify-content: space-between;
+                    justify-content: flex-start;
 
                     font-size: 12px;
                     color: #b08902;
                     font-weight: 400;
                     margin-right: 10px;
+                    row-gap: inherit;
 
                     div {
                         display: flex;
                         align-items: center;
+                        row-gap: inherit;
+                        width: 100%;
 
                         span {
                             font-size: 12px;
@@ -104,9 +115,52 @@ section {
 
                             &:nth-child(1) {
                                 color: v.$pirate-gold;
-                                min-width: 65px;
+                                min-width: 105px;
                                 text-decoration: underline;
                             }
+
+                            input {
+                                font-size: 12px;
+                                color: v.$smalt-blue;
+                                background: v.$vis-vis-2;
+                                border: 1px solid v.$vis-vis-2;
+
+                                &:focus {
+                                    outline: none;
+                                    box-shadow: none;
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .h-room-price,
+                .h-room-days,
+                .h-room-total-price {
+                    span {
+                        font-size: 13px;
+                        color: v.$smalt-blue;
+
+                        &:nth-child(1) {
+                            color: v.$pirate-gold;
+                            min-width: 220px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .h-room-checkout-panel {
+                    justify-content: center;
+
+                    button {
+                        font-size: 13px;
+                        color: v.$smalt-blue;
+
+                        &:hover {
+                            background: v.$pirate-gold;
+                            color: v.$vis-vis;
+                            text-decoration: none;
                         }
                     }
                 }

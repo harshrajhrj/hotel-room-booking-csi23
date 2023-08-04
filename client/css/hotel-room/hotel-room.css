@@ -1,0 +1,383 @@
+section .h-hotel-section,
+section .h-room-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+section .h-hotel-section .h-hotel-thumbnail,
+section .h-room-section .h-hotel-thumbnail {
+  flex-grow: 1;
+  width: 100%;
+}
+section .h-hotel-section .h-hotel-thumbnail .h-hotel-carousel-content,
+section .h-room-section .h-hotel-thumbnail .h-hotel-carousel-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 10px 0px 35px 0px;
+}
+section .h-hotel-section .h-hotel-thumbnail img,
+section .h-room-section .h-hotel-thumbnail img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section .h-hotel-section .h-hotel-thumbnail .h-hotel-swiper-button-next,
+section .h-room-section .h-hotel-thumbnail .h-hotel-swiper-button-next {
+  right: 0;
+}
+section .h-hotel-section .h-hotel-thumbnail .h-hotel-swiper-button-prev,
+section .h-room-section .h-hotel-thumbnail .h-hotel-swiper-button-prev {
+  left: 0;
+}
+section .h-hotel-section .h-hotel-detail,
+section .h-hotel-section .h-room-detail,
+section .h-room-section .h-hotel-detail,
+section .h-room-section .h-room-detail {
+  flex-grow: 1;
+  margin: 0 40px;
+  padding: 10px 0px 35px 0px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  gap: 3px;
+  letter-spacing: 0.7px;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-header,
+section .h-hotel-section .h-hotel-detail .h-room-header,
+section .h-hotel-section .h-room-detail .h-hotel-header,
+section .h-hotel-section .h-room-detail .h-room-header,
+section .h-room-section .h-hotel-detail .h-hotel-header,
+section .h-room-section .h-hotel-detail .h-room-header,
+section .h-room-section .h-room-detail .h-hotel-header,
+section .h-room-section .h-room-detail .h-room-header {
+  color: #b08902;
+  width: 100%;
+  text-align: center;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-header h2,
+section .h-hotel-section .h-hotel-detail .h-room-header h2,
+section .h-hotel-section .h-room-detail .h-hotel-header h2,
+section .h-hotel-section .h-room-detail .h-room-header h2,
+section .h-room-section .h-hotel-detail .h-hotel-header h2,
+section .h-room-section .h-hotel-detail .h-room-header h2,
+section .h-room-section .h-room-detail .h-hotel-header h2,
+section .h-room-section .h-room-detail .h-room-header h2 {
+  margin: 0px;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-address,
+section .h-hotel-section .h-hotel-detail .h-room-address,
+section .h-hotel-section .h-room-detail .h-hotel-address,
+section .h-hotel-section .h-room-detail .h-room-address,
+section .h-room-section .h-hotel-detail .h-hotel-address,
+section .h-room-section .h-hotel-detail .h-room-address,
+section .h-room-section .h-room-detail .h-hotel-address,
+section .h-room-section .h-room-detail .h-room-address {
+  display: flex;
+  flex-flow: column;
+  gap: 1px;
+  width: 100%;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-address div,
+section .h-hotel-section .h-hotel-detail .h-room-address div,
+section .h-hotel-section .h-room-detail .h-hotel-address div,
+section .h-hotel-section .h-room-detail .h-room-address div,
+section .h-room-section .h-hotel-detail .h-hotel-address div,
+section .h-room-section .h-hotel-detail .h-room-address div,
+section .h-room-section .h-room-detail .h-hotel-address div,
+section .h-room-section .h-room-detail .h-room-address div {
+  display: flex;
+  align-items: center;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-address div span,
+section .h-hotel-section .h-hotel-detail .h-room-address div span,
+section .h-hotel-section .h-room-detail .h-hotel-address div span,
+section .h-hotel-section .h-room-detail .h-room-address div span,
+section .h-room-section .h-hotel-detail .h-hotel-address div span,
+section .h-room-section .h-hotel-detail .h-room-address div span,
+section .h-room-section .h-room-detail .h-hotel-address div span,
+section .h-room-section .h-room-detail .h-room-address div span {
+  font-size: 12px;
+  color: #567d92;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-address div span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-address div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-address div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-address div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-address div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-address div span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-address div span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-address div span:nth-child(1) {
+  color: #b08902;
+  min-width: 65px;
+  text-decoration: underline;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data,
+section .h-hotel-section .h-room-detail .h-hotel-rooms,
+section .h-hotel-section .h-room-detail .h-room-meta-data,
+section .h-room-section .h-hotel-detail .h-hotel-rooms,
+section .h-room-section .h-hotel-detail .h-room-meta-data,
+section .h-room-section .h-room-detail .h-hotel-rooms,
+section .h-room-section .h-room-detail .h-room-meta-data {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  row-gap: 4px;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data,
+section .h-hotel-section .h-room-detail .h-hotel-rooms div,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data,
+section .h-hotel-section .h-room-detail .h-room-meta-data div,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data,
+section .h-room-section .h-hotel-detail .h-hotel-rooms div,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data,
+section .h-room-section .h-hotel-detail .h-room-meta-data div,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data,
+section .h-room-section .h-room-detail .h-hotel-rooms div,
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data,
+section .h-room-section .h-room-detail .h-room-meta-data div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  font-size: 12px;
+  color: #b08902;
+  font-weight: 400;
+  margin-right: 10px;
+  row-gap: inherit;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div div,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div div,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div,
+section .h-hotel-section .h-room-detail .h-hotel-rooms div div,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data div,
+section .h-hotel-section .h-room-detail .h-room-meta-data div div,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div,
+section .h-room-section .h-hotel-detail .h-hotel-rooms div div,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div,
+section .h-room-section .h-hotel-detail .h-room-meta-data div div,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div,
+section .h-room-section .h-room-detail .h-hotel-rooms div div,
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data div,
+section .h-room-section .h-room-detail .h-room-meta-data div div {
+  display: flex;
+  align-items: center;
+  row-gap: inherit;
+  width: 100%;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div div span,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div div span,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span,
+section .h-hotel-section .h-room-detail .h-hotel-rooms div div span,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span,
+section .h-hotel-section .h-room-detail .h-room-meta-data div div span,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span,
+section .h-room-section .h-hotel-detail .h-hotel-rooms div div span,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span,
+section .h-room-section .h-hotel-detail .h-room-meta-data div div span,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span,
+section .h-room-section .h-room-detail .h-hotel-rooms div div span,
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span,
+section .h-room-section .h-room-detail .h-room-meta-data div div span {
+  font-size: 12px;
+  color: #567d92;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div div span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-rooms div div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-meta-data div div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-rooms div div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-meta-data div div span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-rooms div div span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-meta-data div div span:nth-child(1) {
+  color: #b08902;
+  min-width: 105px;
+  text-decoration: underline;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span input,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div div span input,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span input,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div div span input,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span input,
+section .h-hotel-section .h-room-detail .h-hotel-rooms div div span input,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span input,
+section .h-hotel-section .h-room-detail .h-room-meta-data div div span input,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span input,
+section .h-room-section .h-hotel-detail .h-hotel-rooms div div span input,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span input,
+section .h-room-section .h-hotel-detail .h-room-meta-data div div span input,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span input,
+section .h-room-section .h-room-detail .h-hotel-rooms div div span input,
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span input,
+section .h-room-section .h-room-detail .h-room-meta-data div div span input {
+  font-size: 12px;
+  color: #567d92;
+  background: #fcf2cc;
+  border: 1px solid #fcf2cc;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span input:focus,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms div div span input:focus,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span input:focus,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data div div span input:focus,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span input:focus,
+section .h-hotel-section .h-room-detail .h-hotel-rooms div div span input:focus,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span input:focus,
+section .h-hotel-section .h-room-detail .h-room-meta-data div div span input:focus,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-hotel-room-data div span input:focus,
+section .h-room-section .h-hotel-detail .h-hotel-rooms div div span input:focus,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-hotel-room-data div span input:focus,
+section .h-room-section .h-hotel-detail .h-room-meta-data div div span input:focus,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-hotel-room-data div span input:focus,
+section .h-room-section .h-room-detail .h-hotel-rooms div div span input:focus,
+section .h-room-section .h-room-detail .h-room-meta-data .h-hotel-room-data div span input:focus,
+section .h-room-section .h-room-detail .h-room-meta-data div div span input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-price span,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-days span,
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-total-price span,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-price span,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-days span,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-total-price span,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-price span,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-days span,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-total-price span,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-price span,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-days span,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-total-price span,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-price span,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-days span,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-total-price span,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-price span,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-days span,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-total-price span,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-price span,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-days span,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-total-price span,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-price span,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-days span,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-total-price span {
+  font-size: 13px;
+  color: #567d92;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-price span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-days span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-total-price span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-price span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-days span:nth-child(1),
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-total-price span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-price span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-days span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-total-price span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-price span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-days span:nth-child(1),
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-total-price span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-price span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-days span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-total-price span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-price span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-days span:nth-child(1),
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-total-price span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-price span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-days span:nth-child(1),
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-total-price span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-price span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-days span:nth-child(1),
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-total-price span:nth-child(1) {
+  color: #b08902;
+  min-width: 220px;
+  text-decoration: none;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-checkout-panel,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-checkout-panel {
+  justify-content: center;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel button,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel button,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel button,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-checkout-panel button,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel button,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel button,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel button,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-checkout-panel button {
+  font-size: 13px;
+  color: #567d92;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel button:hover,
+section .h-hotel-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel button:hover,
+section .h-hotel-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel button:hover,
+section .h-hotel-section .h-room-detail .h-room-meta-data .h-room-checkout-panel button:hover,
+section .h-room-section .h-hotel-detail .h-hotel-rooms .h-room-checkout-panel button:hover,
+section .h-room-section .h-hotel-detail .h-room-meta-data .h-room-checkout-panel button:hover,
+section .h-room-section .h-room-detail .h-hotel-rooms .h-room-checkout-panel button:hover,
+section .h-room-section .h-room-detail .h-room-meta-data .h-room-checkout-panel button:hover {
+  background: #b08902;
+  color: #ffec9f;
+  text-decoration: none;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rating,
+section .h-hotel-section .h-room-detail .h-hotel-rating,
+section .h-room-section .h-hotel-detail .h-hotel-rating,
+section .h-room-section .h-room-detail .h-hotel-rating {
+  display: flex;
+  align-items: baseline;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rating h6,
+section .h-hotel-section .h-room-detail .h-hotel-rating h6,
+section .h-room-section .h-hotel-detail .h-hotel-rating h6,
+section .h-room-section .h-room-detail .h-hotel-rating h6 {
+  color: #b08902;
+  min-width: 65px;
+}
+section .h-hotel-section .h-hotel-detail .h-hotel-rating span,
+section .h-hotel-section .h-room-detail .h-hotel-rating span,
+section .h-room-section .h-hotel-detail .h-hotel-rating span,
+section .h-room-section .h-room-detail .h-hotel-rating span {
+  font-size: 12px;
+  color: #567d92;
+}
+section .h-hotel-section .h-hotel-detail h6,
+section .h-hotel-section .h-room-detail h6,
+section .h-room-section .h-hotel-detail h6,
+section .h-room-section .h-room-detail h6 {
+  color: #b08902;
+  margin: 0px;
+}
+section .h-hotel-section .h-hotel-rooms .h-hotel-header,
+section .h-room-section .h-hotel-rooms .h-hotel-header {
+  color: #b08902;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+section .h-hotel-section .h-hotel-rooms .h-hotel-header h2,
+section .h-room-section .h-hotel-rooms .h-hotel-header h2 {
+  margin: 0px;
+}/*# sourceMappingURL=hotel-room.css.map */

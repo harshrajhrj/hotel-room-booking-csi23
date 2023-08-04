@@ -1,5 +1,5 @@
 <section>
-    <div class="h-hotel-section-1">
+    <div class="h-hotel-section">
         <div class="h-hotel-thumbnail">
             <div class="h-carousel-container swiper">
                 <div class="h-hotel-carousel-content">
@@ -92,7 +92,11 @@
                                 <div class="h-card-content">
                                     <div class="h-card-name"><h2 class="name"><%=hotel.rooms[i].type%></h2></div>
                                     <div class="h-card-button">
-                                        <a href="" class="h-card-book-now" target="_blank">Book now <i class="bi bi-airplane"></i></a>
+                                        <% if(hotel.rooms[i].booked) { %>
+                                            <a href="" class="h-card-book-now disabled" target="_blank">Book now <i class="bi bi-airplane"></i></a>
+                                        <% } else { %>
+                                            <a href="<%="/v1/room/book/" + hotel.rooms[i]._id%>" class="h-card-book-now" target="_blank">Book now <i class="bi bi-airplane"></i></a>
+                                        <% } %>
                                         <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-view-more" target="_blank">View more <i class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
