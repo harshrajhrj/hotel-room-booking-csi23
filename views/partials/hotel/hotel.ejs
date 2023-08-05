@@ -80,7 +80,7 @@
         
                                     <div class="h-card-icons">
                                         <span class="h-card-rating" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to wishlist"><i class="bi bi-heart"></i></span>
-                                        <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-link" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Share"><i class="bi bi-share-fill"></i></a>
+                                        <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Share"><i class="bi bi-share-fill"></i></a>
                                     </div>
         
                                     <div class="h-card-image">
@@ -93,9 +93,9 @@
                                     <div class="h-card-name"><h2 class="name"><%=hotel.rooms[i].type%></h2></div>
                                     <div class="h-card-button">
                                         <% if(hotel.rooms[i].booked) { %>
-                                            <a class="h-card-book-now" target="_blank">Book now <i class="bi bi-airplane"></i></a>
+                                            <a class="h-card-book-now">Book now <i class="bi bi-airplane"></i></a>
                                         <% } else { %>
-                                            <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-book-now" target="_blank">Book now <i class="bi bi-airplane"></i></a>
+                                            <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-book-now">Book now <i class="bi bi-airplane"></i></a>
                                         <% } %>
                                         <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-view-more" target="_blank">View more <i class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
