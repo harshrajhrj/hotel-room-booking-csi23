@@ -104,7 +104,7 @@ app.post('/hotel/:id', async (req, res) => {
  * @param id - Room Object Id
  */
 app.get('/:id', async (req, res) => {
-    res.json(await Room.findById(req.params.id).populate({
+    res.json(await Room.findById(req.params.id).populate([{
         path: 'hotel',
         populate: {
             path: 'location.city',
@@ -115,7 +115,12 @@ app.get('/:id', async (req, res) => {
                 }
             }
         }
-    }).populate('addOns'));
+    }
+        ,
+    {
+        path: 'bookedBy'
+    }
+    ]).populate('addOns'));
 });
 
 /**

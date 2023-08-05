@@ -62,6 +62,8 @@
                                 <span>Check in </span>
                                 <% if(room.booked) { %>
                                     <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date(room.checkIn).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" disabled></span>
+                                <% } else if(room.booked && !checkout.receipt) { %>
+                                    <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date(room.checkIn).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
                                 <% } else { %>
                                     <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date().toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
                                 <% } %>
@@ -70,6 +72,8 @@
                                 <span>Check out </span>
                                 <% if(room.booked) { %>
                                     <span><input type="date" class="form-control" name="checkOut" id="checkOut" value="<%=new Date(room.checkOut).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" disabled></span>
+                                <% } else if(room.booked && !checkout.receipt) { %>
+                                    <span><input type="date" class="form-control" name="checkOut" id="checkOut" value="<%=new Date(room.checkOut).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
                                 <% } else { %>
                                     <span><input type="date" class="form-control" name="checkOut" id="checkOut" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
                                 <% } %>
@@ -83,7 +87,7 @@
                             <h6 class="mb-1 mt-1">Checkout panel</h6>
                             <div class="h-room-days">
                                 <span>Number of staying days </span>
-                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please select Check in and Check out">0 days</span>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please select Check in and Check out"><%=checkout ? checkout.stayingDays : 0%> days</span>
                                 <input type="number" name="days" id="days" class="hidden">
                             </div>
                             <div class="h-room-price">
@@ -92,7 +96,7 @@
                             </div>
                             <div class="h-room-total-price">
                                 <span>Total price<small>(Including all taxes)</small> </span>
-                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Price as per staying days">$0</span>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Price as per staying days">$<%=checkout ? checkout.price : 0%></span>
                             </div>
                             <div class="h-room-checkout-panel">
                                 <button type="submit" class="btn" target="_blank">Go to checkout <i class="bi bi-bag-check-fill"></i></button>

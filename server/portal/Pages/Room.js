@@ -17,6 +17,7 @@ app.get('/:id', async (req, res) => {
     try {
         const guest = req.user || null;
         let checkout = null;
+        // let checkout = await BookedGuest.findOne({guestId: req.user._id, roomId: req.params.id});
         let room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
         room = await room.json();
         const Page = new PageController('Room', { 'pictures': true });
