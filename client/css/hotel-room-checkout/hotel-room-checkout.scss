@@ -3,21 +3,23 @@
 section {
 
     .h-hotel-section,
-    .h-room-section {
+    .h-room-section,
+    .h-checkout-section {
         display: flex;
         flex-flow: column;
         // align-items: center;
         justify-content: space-between;
         gap: 5px;
 
-        .h-hotel-thumbnail {
+        .h-hotel-thumbnail,
+        .h-room-thumbnail {
             flex-grow: 1;
             width: 100%;
 
             .h-hotel-carousel-content {
                 margin: 0 40px;
                 overflow: hidden;
-                border-radius: 25px;
+                // border-radius: 25px;
                 padding: 10px 0px 35px 0px;
             }
 
@@ -34,13 +36,26 @@ section {
             .h-hotel-swiper-button-prev {
                 left: 0;
             }
+
+            &>img {
+                width: calc(100% - 40%);
+                height: calc(100% - 40%);
+                object-fit: cover;
+            }
+        }
+
+        .h-room-thumbnail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .h-hotel-detail,
-        .h-room-detail {
+        .h-room-detail,
+        .h-checkout-detail {
             flex-grow: 1;
-            margin: 0 40px;
-            padding: 10px 0px 35px 0px;
+            margin: 0 25px;
+            padding: 10px 0px 10px 0px;
 
             display: flex;
             flex-flow: column;
@@ -84,7 +99,8 @@ section {
             }
 
             .h-hotel-rooms,
-            .h-room-meta-data {
+            .h-room-meta-data,
+            .h-checkout-data {
                 display: flex;
                 flex-flow: column;
                 justify-content: space-between;
@@ -150,7 +166,8 @@ section {
                     }
                 }
 
-                .h-room-checkout-panel {
+                .h-room-checkout-panel,
+                .h-room-cancel-booking {
                     justify-content: center;
 
                     button {
@@ -164,6 +181,10 @@ section {
                         }
                     }
                 }
+
+                .h-room-cancel-booking {
+                    justify-content: flex-start;
+                }
             }
 
             .h-hotel-rating {
@@ -172,7 +193,7 @@ section {
 
                 h6 {
                     color: v.$pirate-gold;
-                    min-width: 65px;
+                    min-width: 105px;
                 }
 
                 span {

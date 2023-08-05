@@ -76,3 +76,6 @@ npm install connect-mongo
     * if already booked, then look for the other dates for that particular room.
     * room - addOns
     * add to card functionality
+* To do
+    * Show bookings
+    * Navigation responsive

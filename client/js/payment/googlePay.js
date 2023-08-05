@@ -73,30 +73,58 @@ function createAndAddButton() {
     document.getElementById('container').appendChild(googlePayButton);
 }
 
-function onGooglePayButtonClicked() {
+async function onGooglePayButtonClicked() {
     const paymentDataRequest = { ...googlePayConfiguration };
     paymentDataRequest.merchantInfo = {
         merchantId: 'BCR2DN4TZ2V3VCLG',
         merchantName: 'Hotel Room Booking System'
     };
 
+    const Room = window.location.href.split('/')[7];
+    let totalPrice = '';
+    let roomPrice = '';
+    let stayingDays = '';
+    await fetch(`/v1/room/checkout/price/${Room}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+    }).then((response) => response.json())
+        .then((data) => {
+            if (data.message === 'N/A')
+                window.location.href = `/v1/room/checkout/payment/failed/${data.hotel}`
+            else {
+                totalPrice = data.price;
+                roomPrice = data.roomId.price;
+                stayingDays = data.stayingDays;
+            }
+        })
+
     paymentDataRequest.transactionInfo = {
         displayItems: [
             {
-                label: "Subtotal",
-                type: "SUBTOTAL",
-                price: "11.00",
+                label: "Room Price(per day)",
+                type: "LINE_ITEM",
+                price: `${roomPrice}`,
+                status: 'FINAL'
             },
             {
-                label: "Tax",
-                type: "TAX",
-                price: "1.00",
-            }
+                label: `Room Price(${stayingDays} days)`,
+                type: "LINE_ITEM",
+                price: `${parseInt(roomPrice, 10) * parseInt(stayingDays, 10)}`,
+                status: 'FINAL'
+            },
+            {
+                label: "Subtotal(incl. tax)",
+                type: "SUBTOTAL",
+                price: `${totalPrice}`,
+            },
         ],
         countryCode: 'US',
         currencyCode: "USD",
         totalPriceStatus: "FINAL",
-        totalPrice: "12.00",
+        totalPrice: `${totalPrice}`,
         totalPriceLabel: "Total"
     };
 
@@ -130,13 +158,12 @@ function processPayment(paymentData) {
         setTimeout(function () {
             // @todo pass payment token to your gateway to process payment
             let paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-            console.log(paymentToken);
 
             if (attempts++ % 2 == 0) {
                 reject(new Error('Every other attempt fails, next one should succeed'));
             } else {
-                const locationId = window.location.href.split('/');
-                fetch(`/api/room/pay/${locationId[5]}`, {
+                const locationId = window.location.href.split('/')[7];
+                fetch(`/v1/room/checkout/gateway/${locationId}`, {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -145,7 +172,10 @@ function processPayment(paymentData) {
                     body: JSON.stringify({
                         token: paymentToken
                     })
-                });
+                }).then((response) => response.json())
+                    .then((data) => {
+                        window.location.href = `/v1/room/checkout/payment/success/${data.hotel}`;
+                    });
                 resolve({});
             }
         }, 500);

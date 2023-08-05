@@ -17,6 +17,8 @@
             <%- include('partials/hotel/hotel.ejs') %>
         <% } else if(Page.page === 'Room') { %>
             <%- include('partials/room/room.ejs') %>
+        <% } else if(Page.page === 'Checkout') { %>
+            <%- include('partials/payment/checkout.ejs') %>
         <% } %>
     </div>
     <%- include('partials/components/footer.ejs') %>

@@ -1,6 +1,7 @@
 <section>
     <div class="h-room-section">
         <div class="h-room-thumbnail">
+            <img src="<%="/api/room/file/" + room.picture%>" alt="Room">
         </div>
         <div class="h-room-detail">
             <div class="h-room-header mb-2">
@@ -49,44 +50,56 @@
                         </div>
                     </div>
                 </div>
-                <h6 class="mb-1 mt-1">Booking panel</h6>
-                <form action="<%="/v1/room/checkout/" + room._id%>" method="post">
-                    <div class="h-room-booking">
-                        <div class="h-room-booking-status">
-                            <span>Booking status </span>
-                            <span><%=room.booked ? "Booked" : "Open"%></span>
+                <% if(!checkout) { %>
+                    <h6 class="mb-1 mt-1">Booking panel</h6>
+                    <form action="<%="/v1/room/checkout/" + room._id%>" method="post">
+                        <div class="h-room-booking">
+                            <div class="h-room-booking-status">
+                                <span>Booking status </span>
+                                <span><%=room.booked ? "Booked" : "Open"%></span>
+                            </div>
+                            <div class="h-room-checkin">
+                                <span>Check in </span>
+                                <% if(room.booked) { %>
+                                    <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date(room.checkIn).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" disabled></span>
+                                <% } else { %>
+                                    <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date().toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
+                                <% } %>
+                            </div>
+                            <div class="h-room-checkout">
+                                <span>Check out </span>
+                                <% if(room.booked) { %>
+                                    <span><input type="date" class="form-control" name="checkOut" id="checkOut" value="<%=new Date(room.checkOut).toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" disabled></span>
+                                <% } else { %>
+                                    <span><input type="date" class="form-control" name="checkOut" id="checkOut" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
+                                <% } %>
+                            </div>
                         </div>
-                        <div class="h-room-checkin">
-                            <span>Check in </span>
-                            <span><input type="date" class="form-control" name="checkIn" id="checkIn" value="<%=new Date().toLocaleDateString('fr-CA')%>" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
+                        <h6 class="mb-1 mt-1">Add ons</h6>
+                        <div class="h-room-addons">
+                            <span>Coming soon....</span>
                         </div>
-                        <div class="h-room-checkout">
-                            <span>Check out </span>
-                            <span><input type="date" class="form-control" name="checkOut" id="checkOut" min="<%=new Date().toLocaleDateString('fr-CA')%>" required></span>
-                        </div>
-                    </div>
-                    <h6 class="mb-1 mt-1">Add ons</h6>
-                    <div class="h-room-addons">
-                        <span>Coming soon....</span>
-                    </div>
-                    <h6 class="mb-1 mt-1">Checkout panel</h6>
-                    <div class="h-room-days">
-                        <span>Number of staying days </span>
-                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please select Check in and Check out">0 days</span>
-                        <input type="number" name="days" id="days" class="hidden">
-                    </div>
-                    <div class="h-room-price">
-                        <span>Price<small>(per day)</small> </span>
-                        <span>$<%=room.price%></span>
-                    </div>
-                    <div class="h-room-total-price">
-                        <span>Total price<small>(Including all taxes)</small> </span>
-                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Price as per staying days">$0</span>
-                    </div>
-                    <div class="h-room-checkout-panel">
-                        <button type="submit" class="btn" target="_blank">Go to checkout <i class="bi bi-bag-check-fill"></i></button>
-                    </div>
-                </form>
+                        <% if(!room.booked) { %>
+                            <h6 class="mb-1 mt-1">Checkout panel</h6>
+                            <div class="h-room-days">
+                                <span>Number of staying days </span>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please select Check in and Check out">0 days</span>
+                                <input type="number" name="days" id="days" class="hidden">
+                            </div>
+                            <div class="h-room-price">
+                                <span>Price<small>(per day)</small> </span>
+                                <span>$<%=room.price%></span>
+                            </div>
+                            <div class="h-room-total-price">
+                                <span>Total price<small>(Including all taxes)</small> </span>
+                                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Price as per staying days">$0</span>
+                            </div>
+                            <div class="h-room-checkout-panel">
+                                <button type="submit" class="btn" target="_blank">Go to checkout <i class="bi bi-bag-check-fill"></i></button>
+                            </div>
+                        <% } %>
+                    </form>
+                <% } %>
             </div>
         </div>
     </div>

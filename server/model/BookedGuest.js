@@ -13,12 +13,20 @@ const BookedGuestSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    bookedFrom: {
-        type: Date,
+    checkIn: {
+        type: String,
         required: true
     },
     checkOut: {
-        type: Date,
+        type: String,
+        required: true
+    },
+    stayingDays: {
+        type: String,
+        required: true,
+    },
+    price: {
+        type: String,
         required: true
     },
     receipt: {

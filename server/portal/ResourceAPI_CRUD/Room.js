@@ -4,6 +4,7 @@ const Room = require('../../model/Room');
 const app = require('express').Router();
 const FileHandler = require('../../gridFsFiles/File');
 const checkFileSize = require('../../gridFsFiles/CheckFileSize');
+const BookedGuest = require('../../model/BookedGuest');
 
 /**
  * BASE URL
@@ -172,17 +173,5 @@ app.post('/file/:id', FileHandler.upload.single('room'), checkFileSize, async (r
 app.get('/file/:id', async (req, res) => {
     FileHandler.retrieve(req, res);
 });
-
-/**
- * Accept room payment
- */
-app.post('/pay/:id', async (req, res) => {
-    try {
-        console.log(req.body);
-        return res.redirect(`/v1/room/${req.params.id}`);
-    } catch (err) {
-        console.log(err.message);
-    }
-})
 
 module.exports = app;
