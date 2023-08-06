@@ -7,7 +7,7 @@ const app = require('express').Router();
 app.get('/', async (req, res) => {
     const guest = req.user || null;
     const Page = new PageController('Home', true);
-    const hotel = await fetch(`${process.env.SERVER_URL}/api/hotel`, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
+    const hotel = await fetch(`${process.env.SERVER_URL}/api/hotel`, { method: 'GET', headers: { 'Content-Type': 'application/json' }, credentials: 'include' });
     const hotels = await hotel.json();
     res.render('portal.ejs', { Page, guest, hotels, messages: req.flash('success') });
 });
