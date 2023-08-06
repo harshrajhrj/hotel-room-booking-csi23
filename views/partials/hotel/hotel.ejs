@@ -1,0 +1,114 @@
+<section>
+    <div class="h-hotel-section">
+        <div class="h-hotel-thumbnail">
+            <div class="h-carousel-container swiper">
+                <div class="h-hotel-carousel-content">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="<%="/api/hotel/file/" + hotel.thumbnail%>" alt="Hotel" loading="lazy">
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <% for(var i = 0; i < hotel.pictures.length; i++) { %>
+                            <div class="swiper-slide">
+                                <img src="<%="/api/hotel/file/" + hotel.pictures[i]%>" alt="Hotel" loading="lazy">
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="h-hotel-swiper-pagination position-relative"></div>
+            </div>
+        </div>
+        <div class="h-hotel-detail">
+            <div class="h-hotel-header mb-2">
+                <h2><%=hotel.hotel%></h2>
+            </div>
+            <div class="h-hotel-address mb-1">
+                <h6 class="mb-1">Location</h6>
+                <div class="country">
+                    <span>Country </span>
+                    <span><%=hotel.location.city.state.country.country%></span>
+                </div>
+                <div class="state">
+                    <span>State </span>
+                    <span><%=hotel.location.city.state.state%></span>
+                </div>
+                <div class="city">
+                    <span>City </span>
+                    <span><%=hotel.location.city.city%>, <%=hotel.location.city.pincode%></span>
+                </div>
+                <div class="street">
+                    <span>Street </span>
+                    <span><%=hotel.location.street%></span>
+                </div>
+            </div>
+            <div class="h-hotel-rooms">
+                <h6 class="mb-1">Rooms Detail</h6>
+                <div class="h-hotel-room-data">
+                    <div class="h-hotel-total">
+                        <span>Room </span>
+                        <span><%=hotel.no_of_rooms%><i class="bi bi-bookmark-fill"></i></span>
+                    </div>
+                    <div class="h-hotel-available">
+                        <span>Open </span>
+                        <span><%=hotel.no_of_available_rooms%><i class="bi bi-bookmark"></i></span>
+                    </div>
+                    <div class="h-hotel-booked">
+                        <span>Booked </span>
+                        <span><%=hotel.no_of_booked_rooms%><i class="bi bi-bookmark-check"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="h-hotel-rating">
+                <h6>Rating</h6><span><%=hotel.rating%></span>
+            </div>
+        </div>
+        <div class="h-hotel-rooms">
+            <div class="h-hotel-header mb-2">
+                <h2>AVAILABLE ROOMS</h2>
+            </div>
+            <div class="h-carousel-container swiper">
+                <div class="h-carousel-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <% for(var i = 0; i < hotel.rooms.length; i++) { %>
+                            <div class="h-card swiper-slide">
+                                <div class="h-card-image-content">
+                                    <span class="overlay"></span>
+        
+                                    <div class="h-card-icons">
+                                        <span class="h-card-rating" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add to wishlist"><i class="bi bi-heart"></i></span>
+                                        <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Share"><i class="bi bi-share-fill"></i></a>
+                                    </div>
+        
+                                    <div class="h-card-image">
+                                        <img src="<%="/api/room/file/" + hotel.rooms[i].picture%>" alt="hotel" class="h-card-img" loading="lazy">
+                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                    </div>
+                                </div>
+        
+                                <div class="h-card-content">
+                                    <div class="h-card-name"><h2 class="name"><%=hotel.rooms[i].type%></h2></div>
+                                    <div class="h-card-button">
+                                        <% if(hotel.rooms[i].booked) { %>
+                                            <a class="h-card-book-now">Book now <i class="bi bi-airplane"></i></a>
+                                        <% } else { %>
+                                            <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-book-now">Book now <i class="bi bi-airplane"></i></a>
+                                        <% } %>
+                                        <a href="<%="/v1/room/" + hotel.rooms[i]._id%>" class="h-card-view-more" target="_blank">View more <i class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+        
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,224 @@
+@use "../variables" as v;
+
+section {
+
+    .h-hotel-section,
+    .h-room-section,
+    .h-checkout-section {
+        display: flex;
+        flex-flow: column;
+        // align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        .h-hotel-thumbnail,
+        .h-room-thumbnail {
+            flex-grow: 1;
+            width: 100%;
+
+            .h-hotel-carousel-content {
+                margin: 0 40px;
+                overflow: hidden;
+                // border-radius: 25px;
+                padding: 10px 0px 35px 0px;
+            }
+
+            img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+
+            .h-hotel-swiper-button-next {
+                right: 0;
+            }
+
+            .h-hotel-swiper-button-prev {
+                left: 0;
+            }
+
+            &>img {
+                width: calc(100% - 40%);
+                height: calc(100% - 40%);
+                object-fit: cover;
+            }
+        }
+
+        .h-room-thumbnail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h-hotel-detail,
+        .h-room-detail,
+        .h-checkout-detail {
+            flex-grow: 1;
+            margin: 0 25px;
+            padding: 10px 0px 10px 0px;
+
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            gap: 3px;
+            letter-spacing: v.$ltr-spacing;
+
+            .h-hotel-header,
+            .h-room-header {
+                color: v.$pirate-gold;
+                width: 100%;
+                text-align: center;
+
+                h2 {
+                    margin: 0px;
+                }
+            }
+
+            .h-hotel-address,
+            .h-room-address {
+                display: flex;
+                flex-flow: column;
+                gap: 1px;
+                width: 100%;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        font-size: 12px;
+                        color: v.$smalt-blue;
+
+                        &:nth-child(1) {
+                            color: v.$pirate-gold;
+                            min-width: 65px;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .h-hotel-rooms,
+            .h-room-meta-data,
+            .h-checkout-data {
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                width: 100%;
+                row-gap: 4px;
+
+                .h-hotel-room-data,
+                div {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-start;
+
+                    font-size: 12px;
+                    color: #b08902;
+                    font-weight: 400;
+                    margin-right: 10px;
+                    row-gap: inherit;
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        row-gap: inherit;
+                        width: 100%;
+
+                        span {
+                            font-size: 12px;
+                            color: v.$smalt-blue;
+
+                            &:nth-child(1) {
+                                color: v.$pirate-gold;
+                                min-width: 105px;
+                                text-decoration: underline;
+                            }
+
+                            input {
+                                font-size: 12px;
+                                color: v.$smalt-blue;
+                                background: v.$vis-vis-2;
+                                border: 1px solid v.$vis-vis-2;
+
+                                &:focus {
+                                    outline: none;
+                                    box-shadow: none;
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .h-room-price,
+                .h-room-days,
+                .h-room-total-price {
+                    span {
+                        font-size: 13px;
+                        color: v.$smalt-blue;
+
+                        &:nth-child(1) {
+                            color: v.$pirate-gold;
+                            min-width: 220px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .h-room-checkout-panel,
+                .h-room-cancel-booking {
+                    justify-content: center;
+
+                    button {
+                        font-size: 13px;
+                        color: v.$smalt-blue;
+
+                        &:hover {
+                            background: v.$pirate-gold;
+                            color: v.$vis-vis;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .h-room-cancel-booking {
+                    justify-content: flex-start;
+                }
+            }
+
+            .h-hotel-rating {
+                display: flex;
+                align-items: baseline;
+
+                h6 {
+                    color: v.$pirate-gold;
+                    min-width: 105px;
+                }
+
+                span {
+                    font-size: 12px;
+                    color: v.$smalt-blue;
+                }
+            }
+
+            h6 {
+                color: v.$pirate-gold;
+                margin: 0px;
+            }
+        }
+
+        .h-hotel-rooms {
+            .h-hotel-header {
+                color: v.$pirate-gold;
+                width: 100%;
+                text-align: center;
+                letter-spacing: v.$ltr-spacing;
+
+                h2 {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+}

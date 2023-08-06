@@ -1,8 +1,10 @@
 const Hotel = require('../../model/Hotel');
+const AddOn = require('../../model/AddOn');
 const Room = require('../../model/Room');
 const app = require('express').Router();
 const FileHandler = require('../../gridFsFiles/File');
 const checkFileSize = require('../../gridFsFiles/CheckFileSize');
+const BookedGuest = require('../../model/BookedGuest');
 
 /**
  * BASE URL
@@ -102,7 +104,23 @@ app.post('/hotel/:id', async (req, res) => {
  * @param id - Room Object Id
  */
 app.get('/:id', async (req, res) => {
-    res.json(await Room.findById(req.params.id).populate('addOns'));
+    res.json(await Room.findById(req.params.id).populate([{
+        path: 'hotel',
+        populate: {
+            path: 'location.city',
+            populate: {
+                path: 'state',
+                populate: {
+                    path: 'country'
+                }
+            }
+        }
+    }
+        ,
+    {
+        path: 'bookedBy'
+    }
+    ]).populate('addOns'));
 });
 
 /**
@@ -151,6 +169,14 @@ app.post('/file/:id', FileHandler.upload.single('room'), checkFileSize, async (r
             message: 'Server error'
         })
     }
+});
+
+/**
+ * Retrieve room file using the file's Object Id
+ * @param id - File Object Id
+ */
+app.get('/file/:id', async (req, res) => {
+    FileHandler.retrieve(req, res);
 });
 
 module.exports = app;

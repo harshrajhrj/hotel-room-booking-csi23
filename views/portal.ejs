@@ -10,13 +10,22 @@
 <body>
     <%- include('partials/components/navigation.ejs') %>
     <div class="h-body">
+        <%- include('partials/flash.ejs') %>
         <% if(Page.page === 'Home') { %>
             <%- include('partials/home/hotelCarousel.ejs') %>
+        <% } else if(Page.page === 'Hotel') { %>
+            <%- include('partials/hotel/hotel.ejs') %>
+        <% } else if(Page.page === 'Room') { %>
+            <%- include('partials/room/room.ejs') %>
+        <% } else if(Page.page === 'Checkout') { %>
+            <%- include('partials/payment/checkout.ejs') %>
         <% } %>
     </div>
     <%- include('partials/components/footer.ejs') %>
 </body>
-<script src="../../../../../../js/Navigation.js"></script>
 <script src="../../../../../../js/Tooltip.js"></script>
+<script src="../../../../../../js/Navigation.js"></script>
 <script src="../../../../../../js/home/HotelCardSwiper.js"></script>
+<script src="../../../../../../js/hotel/Hotel.js"></script>
+<script src="../../../../../../js/room/Room.js"></script>
 </html>

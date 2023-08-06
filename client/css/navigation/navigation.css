@@ -33,22 +33,6 @@
   border-bottom-left-radius: 0.375rem;
   color: #b08902;
 }
-.h-nav nav .h-nav-searchbar .h-nav-search-inp {
-  background: #ffec9f;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  color: #567d92;
-  letter-spacing: 0.7px;
-  border: none;
-}
-.h-nav nav .h-nav-searchbar .h-nav-search-inp:focus {
-  outline: none !important;
-  border: none;
-  box-shadow: none;
-}
-.h-nav nav .h-nav-searchbar .h-nav-search-inp::-webkit-search-decoration, .h-nav nav .h-nav-searchbar .h-nav-search-inp::-webkit-search-cancel-button, .h-nav nav .h-nav-searchbar .h-nav-search-inp::-webkit-search-results-button, .h-nav nav .h-nav-searchbar .h-nav-search-inp::-webkit-search-results-decoration {
-  display: none;
-}
 .h-nav nav .h-nav-searchbar .h-nav-search-inp::-moz-placeholder {
   width: 80%;
 }
@@ -76,6 +60,94 @@
   background: #fdd719;
   border-radius: 50%;
   color: #567d92;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter {
+  background: #ffec9f;
+  top: 40px;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast {
+  background: #fcf2cc;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .toast-header {
+  background: #ffec9f;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .toast-header strong {
+  color: #b08902;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .toast-header .h-nav-filter-save {
+  font-size: 12px;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .toast-header .h-nav-filter-save:hover {
+  background: #b08902;
+  color: #ffec9f;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  row-gap: 3px;
+  width: 100%;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b08902;
+  width: inherit;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div label {
+  font-size: 12px;
+  min-width: 70px;
+  text-align: left;
+  margin-right: 4px;
+  letter-spacing: 0.7px;
+  text-decoration: underline;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input, .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select {
+  font-size: 13px;
+  border-radius: 0.275rem;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input[type=range], .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input[type=range]::-webkit-slider-runnable-track, .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select[type=range]::-webkit-slider-runnable-track {
+  background: #ffec9f;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input[type=range]::-webkit-slider-thumb, .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #b0a16b;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input[type=range]::-webkit-slider-thumb:hover, .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select[type=range]::-webkit-slider-thumb:hover {
+  background-color: #b08902;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div input[type=range]:focus, .h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div select[type=range]:focus {
+  outline: none;
+}
+.h-nav nav .h-nav-searchbar .h-nav-filter .toast .h-nav-filter-type div .rating-value {
+  width: 25px;
+  margin: 0px 0px 0px 3px;
+}
+.h-nav nav .h-nav-searchbar input, .h-nav nav .h-nav-searchbar select {
+  background: #ffec9f;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: #567d92;
+  letter-spacing: 0.7px;
+  border: none;
+}
+.h-nav nav .h-nav-searchbar input:focus, .h-nav nav .h-nav-searchbar select:focus {
+  outline: none !important;
+  border: none;
+  box-shadow: none;
+}
+.h-nav nav .h-nav-searchbar input::-webkit-search-decoration, .h-nav nav .h-nav-searchbar input::-webkit-search-cancel-button, .h-nav nav .h-nav-searchbar input::-webkit-search-results-button, .h-nav nav .h-nav-searchbar input::-webkit-search-results-decoration, .h-nav nav .h-nav-searchbar select::-webkit-search-decoration, .h-nav nav .h-nav-searchbar select::-webkit-search-cancel-button, .h-nav nav .h-nav-searchbar select::-webkit-search-results-button, .h-nav nav .h-nav-searchbar select::-webkit-search-results-decoration {
+  display: none;
 }
 .h-nav nav .h-nav-advertise,
 .h-nav nav .h-nav-user {

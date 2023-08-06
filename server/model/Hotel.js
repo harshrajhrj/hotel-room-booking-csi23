@@ -82,4 +82,9 @@ HotelSchema.methods.BookRoom = function () {
     this.no_of_booked_rooms = this.no_of_booked_rooms + 1;
 }
 
+HotelSchema.methods.UnBookRoom = function () {
+    this.no_of_available_rooms = this.no_of_available_rooms + 1;
+    this.no_of_booked_rooms = this.no_of_booked_rooms - 1;
+}
+
 module.exports = mongoose.model('Hotel', HotelSchema);

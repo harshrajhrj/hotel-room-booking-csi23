@@ -1,0 +1,33 @@
+<%- include('../room/room.ejs') %>
+<section>
+    <div class="h-checkout-section">
+        <div class="h-checkout-detail">
+            <div class="h-checkout-data">
+                <h6 class="mb-1 mt-1">Checkout panel</h6>
+                <div class="h-room-days">
+                    <span>Number of staying days </span>
+                    <span><%=checkout.stayingDays%> days</span>
+                    <input type="number" name="days" id="days" class="hidden" value="<%=checkout.stayingDays%>">
+                    <input type="text" name="guest" id="guest" class="hidden" value="<%=checkout.guestId%>">
+                </div>
+                <div class="h-room-price">
+                    <span>Price<small>(per day)</small> </span>
+                    <span>$<%=room.price%></span>
+                </div>
+                <div class="h-room-total-price">
+                    <span>Total price<small>(Including all taxes)</small> </span>
+                    <span>$<%=checkout.price%></span>
+                </div>
+                <form action="<%="/v1/room/checkout/cancel/" + room._id%>" method="get">
+                    <div class="h-room-cancel-booking">
+                        <button type="submit" class="btn" target="_blank">Cancel booking <i class="bi bi-x-lg"></i></button>
+                    </div>
+                </form>
+                <div id="container">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
+    <script src="../../../../../../js/payment/googlePay.js"></script>
+</section>

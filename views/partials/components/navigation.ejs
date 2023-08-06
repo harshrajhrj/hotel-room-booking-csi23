@@ -11,6 +11,50 @@
                 <div class="h-nav-search-filter"><i class="bi bi-filter" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Filter"></i></div>
                 <div class="h-nav-search-cancel hidden"><i class="bi bi-x-lg" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Clear"></i></div>
             </div>
+            <div aria-live="polite" aria-atomic="true" class="h-nav-filter d-flex justify-content-center align-items-center w-100 position-absolute rounded-3">
+
+                <!-- Then put toasts within -->
+                <div class="toast w-100" id="h-nav-filter-toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                        <strong class="me-auto">Filter options</strong>
+                        <small><button type="button" class="btn h-nav-filter-save" onclick="SaveFilter()">Save filter</button></small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body ">
+                        <div class="h-nav-filter-results"></div>
+                        <div class="h-nav-filter-type">
+                            <div class="city"><label for="city-filter">City</label><input type="text" name="city" class="form-control" id="city-filter" autocomplete="off"></div>
+                            <div class="bed-type">
+                                <label for="bed-type-filter">Bed Type</label>
+                                <select name="bed_type" class="form-control" id="bed-type-filter">
+                                    <option value="Single bed" selected>Single bed</option>
+                                    <option value="Double bed">Double bed</option>
+                                </select>
+                            </div>
+                            <div class="bed-size">
+                                <label for="bed-size-filter">Bed Size</label>
+                                <select name="bed_size" class="form-control" id="bed-size-filter">
+                                    <option value="Small" selected>Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large">Large</option>
+                                    <option value="Extra large">Extra large</option>
+                                </select>
+                            </div>
+                            <div class="floor">
+                                <label for="floor-filter">Floor</label>
+                                <select name="floor" class="form-control" id="floor-filter">
+                                    <option value="Bottom" selected>Bottom</option>
+                                    <option value="Middle">Middle</option>
+                                    <option value="Upper">Top</option>
+                                </select>
+                            </div>
+                            <div class="rating"><label for="rating-filter">Rating</label><input type="range" name="rating" class="form-control" id="rating-filter" min="1" max="5" step="0.1"><p class="rating-value"></p></div>
+                            <div class="price"><label for="price-filter">Price(in $)</label><input type="number" name="price" class="form-control" id="price-filter" value="10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="h-nav-advertise d-flex">
             <div class="h-nav-trend"><a href="/">Trend</a></div>

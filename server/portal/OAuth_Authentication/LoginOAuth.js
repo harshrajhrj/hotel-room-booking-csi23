@@ -1,6 +1,5 @@
 const passport = require('passport');
 const app = require('express').Router();
-require('dotenv').config();
 
 app.get('/login', passport.authenticate('google'));
 app.get('/redirect/google', passport.authenticate('google', {

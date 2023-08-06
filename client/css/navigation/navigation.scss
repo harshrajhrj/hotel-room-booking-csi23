@@ -38,25 +38,6 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
             }
 
             .h-nav-search-inp {
-                background: v.$vis-vis;
-                border-top-left-radius: 0px;
-                border-bottom-left-radius: 0px;
-                color: v.$smalt-blue;
-                letter-spacing: v.$ltr-spacing;
-                border: none;
-
-                &:focus {
-                    outline: none !important;
-                    border: none;
-                    box-shadow: none;
-                }
-
-                &::-webkit-search-decoration,
-                &::-webkit-search-cancel-button,
-                &::-webkit-search-results-button,
-                &::-webkit-search-results-decoration {
-                    display: none;
-                }
 
                 &::placeholder {
                     width: calc(100% - 20%);
@@ -85,6 +66,116 @@ $search-box-shadow: -1px -2px 2px v.$teak, 1px 2px 2px v.$teak;
                             color: v.$smalt-blue;
                         }
                     }
+                }
+            }
+
+            .h-nav-filter {
+                background: v.$vis-vis;
+                top: 40px;
+
+                .toast {
+                    background: v.$vis-vis-2;
+
+                    .toast-header {
+                        background: v.$vis-vis;
+
+                        strong {
+                            color: v.$pirate-gold;
+                        }
+
+                        .h-nav-filter-save {
+                            font-size: 12px;
+
+                            &:hover {
+                                background: v.$pirate-gold;
+                                color: v.$vis-vis;
+                            }
+                        }
+                    }
+
+                    .h-nav-filter-type {
+                        display: flex;
+                        flex-flow: column;
+                        align-items: flex-start;
+                        row-gap: 3px;
+                        width: 100%;
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            color: v.$pirate-gold;
+
+                            width: inherit;
+
+                            label {
+                                font-size: 12px;
+                                min-width: 70px;
+                                text-align: left;
+                                margin-right: 4px;
+                                letter-spacing: v.$ltr-spacing;
+                                text-decoration: underline;
+                            }
+
+                            input, select {
+                                font-size: 13px;
+                                border-radius: 0.275rem;
+
+                                &[type="range"] {
+                                    -webkit-appearance: none;
+                                    appearance: none;
+
+                                    &::-webkit-slider-runnable-track {
+                                        background: v.$vis-vis;
+                                    }
+
+                                    &::-webkit-slider-thumb {
+                                        -webkit-appearance: none;
+                                        appearance: none;
+                                        background-color: v.$teak;
+                                        height: 12px;
+                                        width: 12px;
+                                        border-radius: 50%;
+
+                                        &:hover {
+                                            background-color: v.$pirate-gold;
+                                        }
+                                    }
+
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                            }
+
+                            .rating-value {
+                                width: 25px;
+                                margin: 0px 0px 0px 3px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            input, select {
+                background: v.$vis-vis;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                color: v.$smalt-blue;
+                letter-spacing: v.$ltr-spacing;
+                border: none;
+
+                &:focus {
+                    outline: none !important;
+                    border: none;
+                    box-shadow: none;
+                }
+
+                &::-webkit-search-decoration,
+                &::-webkit-search-cancel-button,
+                &::-webkit-search-results-button,
+                &::-webkit-search-results-decoration {
+                    display: none;
                 }
             }
         }
