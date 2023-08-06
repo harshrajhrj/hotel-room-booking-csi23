@@ -87,3 +87,4 @@ npm install connect-mongo
 * [ ] Checkout panel
     * If room booked but payment not done, then the guest will see the "Go to checkout"(checkout panel) in room page as well as the guest can also edit the date input until the payment has been done.
     * Prevent others to see the checkout panel, if the guest has already booked the room.
+* [ ] Finish payment processing in backend
