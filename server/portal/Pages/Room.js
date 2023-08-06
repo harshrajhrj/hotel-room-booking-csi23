@@ -18,7 +18,7 @@ app.get('/:id', async (req, res) => {
         const guest = req.user || null;
         let checkout = null;
         // let checkout = await BookedGuest.findOne({guestId: req.user._id, roomId: req.params.id});
-        let room = await fetch(`${process.env.PRODUCTION_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' }, credentials: 'include' });
+        let room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' }, credentials: 'include' });
         room = await room.json();
         const Page = new PageController('Room', { 'pictures': true });
         res.render('portal.ejs', { Page, guest, room, checkout });
@@ -136,7 +136,7 @@ app.get('/checkout/cancel/:id', async (req, res) => {
 app.get('/checkout/pay/:id', async (req, res) => {
     try {
         const guest = req.user || null;
-        let room = await fetch(`${process.env.PRODUCTION_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' }, credentials: 'include' });
+        let room = await fetch(`${process.env.SERVER_URL}/api/room/${req.params.id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' }, credentials: 'include' });
         room = await room.json();
         let checkout = await BookedGuest.findOne({ guestId: req.user._id, roomId: req.params.id });
         const Page = new PageController('Checkout', { 'pictures': true });
