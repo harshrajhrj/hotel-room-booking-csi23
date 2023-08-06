@@ -77,7 +77,11 @@ npm install connect-mongo
     * booking in advance.
     * if already booked, then look for the other dates for that particular room.
     * room - addOns
-    * add to card functionality
-* [ ] To do
-    * Show bookings
+    * add to cart functionality
+* [ ] Navigation
     * Navigation responsive
+* [ ] Booking
+    * Show bookings
+* [ ] Checkout panel
+    * If room booked but payment not done, then the guest will see the "Go to checkout"(checkout panel) in room page as well as the guest can also edit the date input until the payment has been done.
+    * Prevent others to see the checkout panel, if the guest has already booked the room.
