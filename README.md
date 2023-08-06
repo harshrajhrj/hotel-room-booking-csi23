@@ -70,14 +70,14 @@ npm install connect-mongo
 * Frequent HTTP Status Codes used<sup>[Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)</sup>
 ## Troubleshooting-Debugging
 ### Redirect to previous page after login
-* [] https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
-* [] Avoid creating sessions on page reload
+* [ ] https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
+* [ ] Avoid creating sessions on page reload
 ## Things to do
-* [] Allow dynamic booking, that
+* [ ] Allow dynamic booking, that
     * booking in advance.
     * if already booked, then look for the other dates for that particular room.
     * room - addOns
     * add to card functionality
-* [] To do
+* [ ] To do
     * Show bookings
     * Navigation responsive
