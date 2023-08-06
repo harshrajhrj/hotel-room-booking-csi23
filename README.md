@@ -18,27 +18,22 @@ $vis-vis: #ffec9f;
 ## Carousel card slider
 ### References
 * [Responsive card slider](https://youtu.be/qOO6lVMhmGc)<sup>[Code](https://www.codingnepalweb.com/responsive-card-slider-javascript/)</sup>
-* [Responsive card slider](https://youtu.be/JOdpkAJVub0)<sup>[Code](https://www.codingnepalweb.com/card-slider-html-css-javascript-swiperjs/)</sup>
 * [Owl carousel](https://youtu.be/BKKcGb80MOs)<sup>[Code](https://www.codingnepalweb.com/create-sliding-card-html-css-javascript/)</sup>
 * [Our team section carousel](https://youtu.be/k-Od6skhZfo)<sup>[Code](https://github.com/devmode-on/Card-Slider)</sup>
 ### Swiperjs
 * https://swiperjs.com
-
 ## Payment gateway
-* https://developers.google.com/pay/api/android/guides/tutorial
+### Google Pay
 * https://youtube.com/playlist?list=PLOU2XLYxmsILkNW9d1Jw9rHLAEORuuS-9
 * https://pay.google.com/business/console/?utm_source=yt-metadata&utm_medium=video&utm_campaign=integration
-* https://developers.google.com/pay/api/web/overview
-* https://razorpay.com/integrations/
 ### Google Pay API Reference
-* https://youtu.be/kH0nafGhbww
+* https://developers.google.com/pay/api/web/overview
 * https://developers.google.com/pay/api/web/reference/client
 * [Demos](https://developers.google.com/pay/api/web/guides/resources/demos)
+### Payment Processor
+* https://razorpay.com/integrations/
 ## Storage
 * MongoDB
-## MongoDB database tools
-* https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
-* https://www.mongodb.com/docs/database-tools/
 ### MongoDB Storage
 * GridFS<sup>[Link](https://www.mongodb.com/docs/drivers/node/current/fundamentals/gridfs/#overview)</sup>
 * https://github.com/aheckmann/gridfs-stream
@@ -66,6 +61,11 @@ npm install express-session
 ```javascript
 npm install connect-mongo
 ```
+## Server setup
+### MongoDB database tools
+* https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+* https://www.mongodb.com/docs/database-tools/
+## Troubleshooting-Debugging
 ### Redirect to previous page after login
 * https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
 ## Things to do
