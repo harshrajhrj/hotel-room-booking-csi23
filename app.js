@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
     cors({
-        origin: ["http://localhost:3000", "https://harshrajapp.tech"],
+        origin: ["http://localhost:3000", "https://bookaashiyana.harshrajapp.tech"],
         methods: "GET,POST,PUT,DELETE",
         credentials: true,
     })
