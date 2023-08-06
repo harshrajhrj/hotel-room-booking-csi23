@@ -1,8 +1,7 @@
 # hotel-room-booking-csi23
 This project is about the design and development of Hotel Room Booking website.
-## HTTP Status Codes
-* Frequent HTTP Status Codes used<sup>[Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)</sup>
-## Color combo for the application UI
+## CSS and Component Styling
+### Color combo for the application UI
 * Color combination taken from MuffinGroup<sup>[Link](https://muffingroup.com/blog/yellow-color-palette/)</sup>
 ```scss
 $smalt-blue: #567d92;
@@ -12,11 +11,12 @@ $teak: #b0a16b;
 $candlelight: #fdd719;
 $tuatara: #2b2a28;
 $vis-vis: #ffec9f;
+$vis-vis-2: #fcf2cc;
 ```
-## Box shadow
+### Box shadow
 * https://getcssscan.com/css-box-shadow-examples (#18)
-## Carousel card slider
-### References
+### Carousel card slider
+**References**
 * [Responsive card slider](https://youtu.be/qOO6lVMhmGc)<sup>[Code](https://www.codingnepalweb.com/responsive-card-slider-javascript/)</sup>
 * [Owl carousel](https://youtu.be/BKKcGb80MOs)<sup>[Code](https://www.codingnepalweb.com/create-sliding-card-html-css-javascript/)</sup>
 * [Our team section carousel](https://youtu.be/k-Od6skhZfo)<sup>[Code](https://github.com/devmode-on/Card-Slider)</sup>
@@ -34,7 +34,7 @@ $vis-vis: #ffec9f;
 * https://razorpay.com/integrations/
 ## Storage
 * MongoDB
-### MongoDB Storage
+### MongoDB File Storage - GridFS
 * GridFS<sup>[Link](https://www.mongodb.com/docs/drivers/node/current/fundamentals/gridfs/#overview)</sup>
 * https://github.com/aheckmann/gridfs-stream
 ### File storage middleware
@@ -65,6 +65,8 @@ npm install connect-mongo
 ### MongoDB database tools
 * https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 * https://www.mongodb.com/docs/database-tools/
+### HTTP Status Codes
+* Frequent HTTP Status Codes used<sup>[Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)</sup>
 ## Troubleshooting-Debugging
 ### Redirect to previous page after login
 * https://stackoverflow.com/questions/13335881/redirecting-to-previous-page-after-authentication-in-node-js-using-passport-js
