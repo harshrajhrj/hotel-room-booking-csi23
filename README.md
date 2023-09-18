@@ -98,7 +98,7 @@ To start this application, you need to configure following things
 5. Create a database
 ## Environment variables
 The following are the keys against which the values has to be put
-```javascript
+```
 DB_URL=<mongodb://127.0.0.1:27017/DATABASE_NAME>
 CLIENT_ID=<OAUTH2.0_CLIENT_ID>
 CLIENT_SECRET=<OAUTH2.0_CLIENT_SECRET>
