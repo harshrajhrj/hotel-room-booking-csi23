@@ -107,6 +107,7 @@ CLIENT_SUCCESS=/
 SERVER_URL=https://<DOMAIN>
 ```
 ## Installing the dependencies
+Install the dependencies using the following npm command
 ```javascript
 npm install
 ```
