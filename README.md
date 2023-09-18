@@ -1,4 +1,5 @@
-# [hotel-room-booking-csi23](https://bookaashiyana.onrender.com)
+[hotel-room-booking-csi23](https://bookaashiyana.onrender.com)
+# Requirements
 This project is about the design and development of Hotel Room Booking website.
 ## CSS and Component Styling
 ### Color combo for the application UI
@@ -88,3 +89,35 @@ npm install connect-mongo
     * If room booked but payment not done, then the guest will see the "Go to checkout"(checkout panel) in room page as well as the guest can also edit the date input until the payment has been done.
     * Prevent others to see the checkout panel, if the guest has already booked the room.
 * [ ] Finish payment processing in backend
+# Getting started
+To start this application, you need to configure following things
+1. Create OAuth2.0 client credentials on Google Cloud Console
+2. Environment variables
+3. Install the dependencies
+4. Install MongoDB compass and complete the setup using MongoDB database tools
+5. Create a database
+## Environment variables
+The following are the keys against which the values has to be put
+```javascript
+DB_URL=<mongodb://127.0.0.1:27017/DATABASE_NAME>
+CLIENT_ID=<OAUTH2.0_CLIENT_ID>
+CLIENT_SECRET=<OAUTH2.0_CLIENT_SECRET>
+CLIENT_REDIRECT=/auth/redirect/google
+CLIENT_SUCCESS=/
+SERVER_URL=https://<DOMAIN>
+```
+## Installing the dependencies
+```javascript
+npm install
+```
+## MongoDB server and database setup
+Install the server
+* https://www.mongodb.com/try/download/compass
+* https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+Install database tools
+* https://www.mongodb.com/docs/database-tools/
+## Build and run
+After all configurations have been completed, run the following command in the terminal making sure you're in root directory
+```javascript
+npm start
+```
