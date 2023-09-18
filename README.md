@@ -1,4 +1,4 @@
-# [hotel-room-booking-csi23](https://bookaashiyana.harshrajapp.tech)
+# [hotel-room-booking-csi23](https://bookaashiyana.onrender.com)
 This project is about the design and development of Hotel Room Booking website.
 ## CSS and Component Styling
 ### Color combo for the application UI
