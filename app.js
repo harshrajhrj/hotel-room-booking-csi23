@@ -74,4 +74,4 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', require('./server/portal/portal'));
 
-app.listen(3000, () => { console.log('HotelRoomSystem Server is live') });
+app.listen(4000, () => { console.log('HotelRoomSystem Server is live') });
